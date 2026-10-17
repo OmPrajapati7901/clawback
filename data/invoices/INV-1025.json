@@ -1,0 +1,22 @@
+{
+  "invoice_no": "INV-1025",
+  "vendor_name_raw": "Kestrel Staffing Partners",
+  "invoice_date": "2026-05-29",
+  "line_items": [
+    {
+      "sku": "KS-901",
+      "description": "Monthly utilization and compliance report",
+      "qty": 1,
+      "unit_price": 125.0,
+      "amount": 125.0
+    },
+    {
+      "sku": "KS-100",
+      "description": "Contract analyst, per hour worked",
+      "qty": 480,
+      "unit_price": 78.0,
+      "amount": 37440.0
+    }
+  ],
+  "total": 37565.0
+}

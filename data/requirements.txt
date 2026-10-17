@@ -1,0 +1,4 @@
+# Data generator dependencies (data/ only — the backend has its own requirements.txt)
+# Pinned so a re-run of `python data/generator/generate.py` reproduces the same bytes.
+faker==37.4.0
+reportlab==4.4.2

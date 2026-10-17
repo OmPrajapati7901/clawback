@@ -1,0 +1,25 @@
+{
+  "invoice": {
+    "invoice_no": "INV-1007",
+    "vendor_name_raw": "Heliotrope Cloud Hosting, Inc.",
+    "invoice_date": "2026-04-08",
+    "line_items": [
+      {
+        "sku": "HC-300",
+        "description": "Managed PostgreSQL instance, single region",
+        "qty": 12,
+        "unit_price": 335.0,
+        "amount": 4020.0
+      },
+      {
+        "sku": "HC-100",
+        "description": "Compute instance, standard tier, Linux",
+        "qty": 4200,
+        "unit_price": 0.42,
+        "amount": 1764.0
+      }
+    ],
+    "total": 5784.0
+  },
+  "result": null
+}

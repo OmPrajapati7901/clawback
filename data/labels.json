@@ -1,0 +1,230 @@
+{
+  "INV-1001": {
+    "decision": "DISPUTE",
+    "findings": [
+      {
+        "delta_usd": 4180.0,
+        "sku": "FR-200",
+        "type": "ESCALATOR_EXCEEDED"
+      }
+    ]
+  },
+  "INV-1002": {
+    "decision": "DISPUTE",
+    "findings": [
+      {
+        "delta_usd": 401.4,
+        "sku": "FR-100",
+        "type": "ESCALATOR_EXCEEDED"
+      }
+    ]
+  },
+  "INV-1003": {
+    "decision": "APPROVE",
+    "findings": []
+  },
+  "INV-1004": {
+    "decision": "DISPUTE",
+    "findings": [
+      {
+        "delta_usd": 450.0,
+        "sku": "FR-900",
+        "type": "INCLUDED_ITEM_BILLED"
+      }
+    ]
+  },
+  "INV-1005": {
+    "decision": "FLAG",
+    "findings": [
+      {
+        "delta_usd": 0.0,
+        "sku": "FR-990",
+        "type": "UNKNOWN_SKU"
+      }
+    ]
+  },
+  "INV-1006": {
+    "decision": "APPROVE",
+    "findings": []
+  },
+  "INV-1007": {
+    "decision": "DISPUTE",
+    "findings": [
+      {
+        "delta_usd": 300.0,
+        "sku": "HC-300",
+        "type": "RATE_MISMATCH"
+      }
+    ]
+  },
+  "INV-1008": {
+    "decision": "FLAG",
+    "findings": [
+      {
+        "delta_usd": 160.0,
+        "sku": "HC-100",
+        "type": "RATE_MISMATCH"
+      }
+    ]
+  },
+  "INV-1009": {
+    "decision": "DISPUTE",
+    "findings": [
+      {
+        "delta_usd": 300.0,
+        "sku": "HC-200",
+        "type": "TIER_DISCOUNT_MISSED"
+      }
+    ]
+  },
+  "INV-1010": {
+    "decision": "APPROVE",
+    "findings": []
+  },
+  "INV-1011": {
+    "decision": "APPROVE",
+    "findings": []
+  },
+  "INV-1012": {
+    "decision": "APPROVE",
+    "findings": []
+  },
+  "INV-1013": {
+    "decision": "DISPUTE",
+    "findings": [
+      {
+        "delta_usd": 1200.03,
+        "sku": "BF-500",
+        "type": "TIER_DISCOUNT_MISSED"
+      }
+    ]
+  },
+  "INV-1014": {
+    "decision": "DISPUTE",
+    "findings": [
+      {
+        "delta_usd": 320.0,
+        "sku": "BF-900",
+        "type": "INCLUDED_ITEM_BILLED"
+      }
+    ]
+  },
+  "INV-1015": {
+    "decision": "FLAG",
+    "findings": [
+      {
+        "delta_usd": 80.0,
+        "sku": "BF-200",
+        "type": "MATH_ERROR"
+      }
+    ]
+  },
+  "INV-1016": {
+    "decision": "DISPUTE",
+    "findings": [
+      {
+        "delta_usd": 329.52,
+        "sku": "BF-100",
+        "type": "ESCALATOR_EXCEEDED"
+      }
+    ]
+  },
+  "INV-1017": {
+    "decision": "APPROVE",
+    "findings": []
+  },
+  "INV-1018": {
+    "decision": "APPROVE",
+    "findings": []
+  },
+  "INV-1019": {
+    "decision": "DISPUTE",
+    "findings": [
+      {
+        "delta_usd": 1044.0,
+        "sku": "PS-100",
+        "type": "TIER_DISCOUNT_MISSED"
+      }
+    ]
+  },
+  "INV-1020": {
+    "decision": "DISPUTE",
+    "findings": [
+      {
+        "delta_usd": 260.0,
+        "sku": "PS-200",
+        "type": "RATE_MISMATCH"
+      }
+    ]
+  },
+  "INV-1021": {
+    "decision": "FLAG",
+    "findings": [
+      {
+        "delta_usd": 0.75,
+        "sku": "PS-300",
+        "type": "MATH_ERROR"
+      }
+    ]
+  },
+  "INV-1022": {
+    "decision": "FLAG",
+    "findings": [
+      {
+        "delta_usd": 0.0,
+        "sku": "PS-950",
+        "type": "UNKNOWN_SKU"
+      }
+    ]
+  },
+  "INV-1023": {
+    "decision": "APPROVE",
+    "findings": []
+  },
+  "INV-1024": {
+    "decision": "APPROVE",
+    "findings": []
+  },
+  "INV-1025": {
+    "decision": "FLAG",
+    "findings": [
+      {
+        "delta_usd": 125.0,
+        "sku": "KS-901",
+        "type": "INCLUDED_ITEM_BILLED"
+      }
+    ]
+  },
+  "INV-1026": {
+    "decision": "DISPUTE",
+    "findings": [
+      {
+        "delta_usd": 320.0,
+        "sku": "KS-100",
+        "type": "MATH_ERROR"
+      }
+    ]
+  },
+  "INV-1027": {
+    "decision": "FLAG",
+    "findings": [
+      {
+        "delta_usd": 0.0,
+        "sku": "KS-990",
+        "type": "UNKNOWN_SKU"
+      }
+    ]
+  },
+  "INV-1028": {
+    "decision": "APPROVE",
+    "findings": []
+  },
+  "INV-1029": {
+    "decision": "APPROVE",
+    "findings": []
+  },
+  "INV-1030": {
+    "decision": "APPROVE",
+    "findings": []
+  }
+}

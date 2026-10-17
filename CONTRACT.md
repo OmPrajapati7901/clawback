@@ -6,7 +6,7 @@ MONEY TALKS 2, Money Operations track. ALL DATA IS SYNTHETIC.
 ## Ownership
 
 backend/ (incl. schemas.py, requirements.txt, scripts/) → Claude Code
-frontend/, data/, eval/, tests/, Dockerfile, README.md → Codex
+frontend/, data/, eval/, tests/, Dockerfile, README.md → Codex, opencode
 Never edit another owner's files.
 
 ## Data (data/)

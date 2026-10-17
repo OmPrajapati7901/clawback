@@ -1,0 +1,110 @@
+/* Clawback — custom bits Tailwind can't express. */
+@font-face {
+  font-family: 'Geist';
+  src: url('vendor/fonts/geist-sans-var.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('vendor/fonts/geist-mono-var.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+[x-cloak] { display: none !important; }
+
+:where(button, a, [tabindex]):focus-visible { outline: 2px solid #121A26; outline-offset: 3px; }
+button:disabled { cursor: wait; }
+
+:root {
+  --ink: #121A26;
+  --red: #C0291B;
+  --marker: #F6E58A;
+}
+
+/* Boot splash, removed once Alpine starts. */
+#boot {
+  position: fixed; inset: 0; z-index: 100;
+  display: grid; place-items: center;
+  background: #F5F7F9; color: #5B6675;
+  font: 500 13px/1.4 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  letter-spacing: .01em;
+}
+#boot .mark { display: inline-block; width: 9px; height: 9px; border-radius: 2px; background: var(--red); margin-right: 8px; }
+
+/* Red-ink correction: a hand-drawn strike over a billed amount. */
+.strike { position: relative; display: inline-block; }
+.strike::after {
+  content: "";
+  position: absolute; left: -3px; right: -3px; top: 50%; height: .55em;
+  transform: translateY(-50%) rotate(-1.2deg);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 10' preserveAspectRatio='none'%3E%3Cpath d='M2 6.4C24 2.4 56 8.6 118 3.2' stroke='%23C0291B' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  pointer-events: none;
+}
+
+/* Rubber stamp. */
+.stamp {
+  display: inline-block;
+  transform: rotate(-5.5deg);
+  border: 2.5px solid currentColor;
+  border-radius: 7px;
+  padding: .16em .52em .2em;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  box-shadow: 0 0 0 3px #fff, 0 0 0 4px currentColor;
+  opacity: .92;
+  white-space: nowrap;
+}
+.stamp-in { animation: stampIn .5s cubic-bezier(.2, 1.35, .4, 1) both; }
+@keyframes stampIn {
+  0%   { opacity: 0; transform: rotate(-14deg) scale(1.4); }
+  55%  { opacity: .95; }
+  100% { opacity: .92; transform: rotate(-5.5deg) scale(1); }
+}
+
+/* Contract clauses: cited ones get a rule; the active one gets the highlighter sweep. */
+.clause { border-left: 3px solid transparent; padding-left: 14px; margin-left: -17px; border-radius: 1px; }
+.clause.cited { border-left-color: rgba(192, 41, 27, .3); }
+.clause.hl {
+  border-left-color: var(--red);
+  background-image: linear-gradient(180deg, transparent 6%, rgba(246, 229, 138, .82) 6%, rgba(246, 229, 138, .82) 94%, transparent 94%);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 0% 100%;
+  animation: sweep .85s cubic-bezier(.22, 1, .36, 1) .05s both;
+}
+@keyframes sweep { from { background-size: 0% 100%; } to { background-size: 100% 100%; } }
+
+/* Skeletons. */
+.skel {
+  background: linear-gradient(90deg, #EEF1F5 25%, #E2E7ED 37%, #EEF1F5 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+@keyframes shimmer { from { background-position: 100% 0; } to { background-position: -100% 0; } }
+
+/* Slim scrollbars for panes. */
+.scroll-thin { scrollbar-width: thin; scrollbar-color: #CDD3DC transparent; }
+.scroll-thin::-webkit-scrollbar { width: 11px; height: 11px; }
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: #D3D9E2; border: 3.5px solid transparent; background-clip: content-box; border-radius: 999px;
+}
+.scroll-thin::-webkit-scrollbar-thumb:hover { background: #B9C1CD; border: 3.5px solid transparent; background-clip: content-box; }
+.scroll-thin::-webkit-scrollbar-track { background: transparent; }
+
+/* The one ambient motion: a running step's dot. */
+.pulse-dot { animation: pulse 1.4s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: .35; transform: scale(.85); } 50% { opacity: 1; transform: scale(1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+  .stamp { transform: rotate(-5.5deg); }
+}

@@ -1,0 +1,36 @@
+{
+  "invoice_no": "INV-1010",
+  "vendor_name_raw": "Heliotrope Cloud Hosting, Inc.",
+  "invoice_date": "2026-07-03",
+  "line_items": [
+    {
+      "sku": "HC-200",
+      "description": "Object storage, standard durability",
+      "qty": 49999,
+      "unit_price": 0.02,
+      "amount": 999.98
+    },
+    {
+      "sku": "HC-200",
+      "description": "Object storage, standard durability",
+      "qty": 60000,
+      "unit_price": 0.015,
+      "amount": 900.0
+    },
+    {
+      "sku": "HC-100",
+      "description": "Compute instance, standard tier, Linux",
+      "qty": 6000,
+      "unit_price": 0.42,
+      "amount": 2520.0
+    },
+    {
+      "sku": "HC-300",
+      "description": "Managed PostgreSQL instance, single region",
+      "qty": 4,
+      "unit_price": 310.0,
+      "amount": 1240.0
+    }
+  ],
+  "total": 5659.98
+}

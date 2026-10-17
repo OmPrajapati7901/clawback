@@ -1,0 +1,83 @@
+# Master Services Agreement — Corvina Freight Systems LLC
+
+*Freight, expedited delivery and drayage services for Harborline Industries, Inc.*
+
+This Agreement is entered into by Corvina Freight Systems LLC ("Carrier") and Harborline Industries, Inc. ("Customer") as of June 1, 2024. It sets out the services, the rates, the volume bands and the included services that apply to every invoice Carrier issues during the Term.
+
+## 1.1 Parties and Roles
+
+This Master Services Agreement (this "Agreement") is made by and between Corvina Freight Systems LLC, an Ohio limited liability company ("Carrier"), and Harborline Industries, Inc., a Delaware corporation with its principal place of business in Cleveland, Ohio ("Customer"). Carrier and Customer are each a "Party" and together the "Parties". Carrier shall perform the services described in Section 2.1 through its own employees and subcontractors, and remains responsible for their performance.
+
+## 1.2 Effective Date and Term
+
+This Agreement takes effect on June 1, 2024 (the "Effective Date") and continues for a Term of three (3) years from that date (the "Term") unless terminated earlier under Section 9.1. On expiration of the initial Term the Agreement renews for successive twelve (12) month periods unless a Party gives written notice of non-renewal at least 60 days before the end of the then-current period. All amounts are stated in United States dollars.
+
+## 2.1 Services Provided
+
+Carrier shall provide less-than-truckload transportation, expedited delivery and container drayage services to the Customer distribution centers listed in Exhibit A. The only charges that may be invoiced under this Agreement are the rates and bands expressly identified in Section 3.2 and Section 4.1, and the pass-through amounts permitted by Section 3.3. No other charges, surcharges, administrative fees, minimum commitments or accessorials may be billed unless Customer authorizes them in writing before they are incurred.
+
+## 2.2 Service Standards and Remedies
+
+Carrier shall pick up and deliver at least ninety-six percent (96%) of scheduled stops inside the committed window. A missed window that is not caused by weather, Customer delay or a documented road closure earns a service credit equal to the line charge for the affected shipment. A service failure gives rise to the credits stated in this Section and does not create a right to increase any rate, to suspend service without notice, or to add a recovery surcharge of any kind.
+
+## 3.1 Invoicing and Payment
+
+Carrier shall invoice monthly in arrears. Each invoice must state a unique invoice number, the invoice date, the applicable purchase order number, and for every line item the SKU code, the description, the quantity, the unit price and the line amount. The quantity multiplied by the unit price must equal the line amount, and the invoice total must equal the sum of the line amounts. Customer pays undisputed amounts within 30 days of receipt of a correct invoice. An invoice that does not comply with this Section is returned for correction without affecting the Term.
+
+## 3.2 Rates and Charges
+
+The rates below are the complete schedule of charges for the services described in Section 2.1, stated per unit of measure. Palletized less-than-truckload freight (SKU FR-100) is billed at $42.40 per pallet. Expedited next-day delivery (SKU FR-200) is billed at $96.00 per shipment. Container drayage (SKU FR-300) is billed at $185.00 per container. Cross-dock handling and palletization (SKU FR-400) is billed at $12.80 per pallet handled. Rates are exclusive of sales and use taxes, which Customer pays as required by law. No fuel, minimum, platform, administrative or convenience charge may be added to these rates.
+
+## 3.3 Pass-Through Charges
+
+Customer-approved third-party costs are passed through at actual cost with no markup and must be identified on the invoice by the SKU to which they relate. A pass-through amount that is not pre-approved in writing is not payable. Carrier bears all costs of doing business under this Agreement, including its own insurance, licensing, equipment and supervision.
+
+## 4.1 No Volume Bands
+
+The rates in Section 3.2 are flat rates. This Agreement contains no volume-based rate bands, tiered pricing, minimum quantity commitment or rebate mechanism, and the number of pallets, shipments or containers dispatched in any month does not change a unit rate.
+
+## 5.1 Included Services
+
+The following services are included in the rates set out in Section 3.2 and must not be billed separately: monthly logistics performance reporting (SKU FR-900), which covers tracking, on-time performance and exception reporting; and fuel surcharge administration (SKU FR-901), which covers the calculation, audit and application of the fuel index used under this Agreement. Carrier's fuel cost recovery is fully expressed in the rates in Section 3.2.
+
+## 5.2 Charges Not Permitted
+
+Carrier shall not bill separately for travel time, training, supervision, administrative overhead or any service described in Section 5.1. A charge for a service identified in Section 5.1 may not appear on an invoice with a positive amount, and a credit for such a charge may only be applied with Customer's written agreement.
+
+## 6.1 Purchase Orders and Reporting
+
+Each invoice must reference a Customer purchase order with the HL-FR- prefix, and Carrier shall not invoice against an expired or closed purchase order. Carrier shall also provide a quarterly business review covering volumes, service performance and any substitute products, substitutions or rate changes applied during the quarter.
+
+## 7.1 Adjustment Mechanism
+
+The rates in Section 3.2 change only as provided in Section 7.2. Any other change, including a change driven by fuel indices, equipment availability, lane distance or accessorial practice, requires a written amendment signed by both Parties and takes effect only for shipments dispatched after the amendment date.
+
+## 7.2 Price Adjustments
+
+On each anniversary of the Effective Date, Carrier may adjust the unit rates set out in Section 3.2 by no more than five percent (5.0%) of the rate in effect immediately before that anniversary, compounded annually over the Term. An adjustment takes effect only on the anniversary on which it is applied and may not be applied retroactively to any shipment dispatched before that date. A rate increase above the five percent (5.0%) ceiling in any contract year is not chargeable, and Customer may treat any invoice line that applies such an increase as an overcharge.
+
+## 8.1 Audit and Records
+
+Customer or its designee may audit Carrier's records supporting any invoice for 12 months after the invoice date. If an audit shows an overcharge, Carrier shall refund or credit the overcharged amount within thirty (30) days of the audit findings, together with interest at one percent (1%) per month from the invoice date. Carrier shall keep supporting records for the full audit period.
+
+## 8.2 Disputed Amounts
+
+Customer may withhold a disputed amount and shall give written notice within 15 days of receiving the invoice. The Parties shall resolve the dispute in good faith within thirty (30) days of notice, and Carrier shall not suspend service or impose a late fee on a disputed amount while the dispute is pending. Amounts found to be overcharges are credited on the next invoice.
+
+## 9.1 Termination
+
+Either Party may terminate this Agreement for material breach on thirty (30) days' written notice if the breach is not cured within that period, or for convenience on 60 days' written notice. Termination does not affect Customer's right to recover overcharges identified under Section 8.1, and the rates in Section 3.2 continue to govern all services performed before the effective date of termination.
+
+## 10.1 Governing Law and Entire Agreement
+
+This Agreement is governed by the laws of the State of Ohio, without regard to its conflict of laws rules. This Agreement, together with its Exhibits, is the entire agreement of the Parties on its subject matter and supersedes all prior proposals, quotes and rate sheets. No purchase order, invoice, portal term or click-through term modifies this Agreement, and any such term that conflicts with this Agreement is void.
+
+## 10.2 Execution
+
+The Parties execute this Agreement as of the Effective Date. Harborline Industries, Inc., by its authorized officer, and Corvina Freight Systems LLC, by its authorized officer, have each signed below and delivered this Agreement electronically.
+
+| Customer | Carrier |
+| --- | --- |
+| Harborline Industries, Inc. | Corvina Freight Systems LLC |
+| Name: Dana Whitfield | Name: Priya Raghunathan |
+| Title: Director, Procurement Operations | Title: Vice President, Commercial |

@@ -1,0 +1,22 @@
+{
+  "invoice_no": "INV-1022",
+  "vendor_name_raw": "Pinecrest Office Supply Company",
+  "invoice_date": "2026-06-25",
+  "line_items": [
+    {
+      "sku": "PS-950",
+      "description": "Pallet recycling and removal fee",
+      "qty": 1,
+      "unit_price": 85.0,
+      "amount": 85.0
+    },
+    {
+      "sku": "PS-100",
+      "description": "Multipurpose copy paper, 20 lb, 10-ream case",
+      "qty": 60,
+      "unit_price": 34.25,
+      "amount": 2055.0
+    }
+  ],
+  "total": 2140.0
+}

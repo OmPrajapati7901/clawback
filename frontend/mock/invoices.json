@@ -1,0 +1,38 @@
+[
+  {
+    "invoice_no": "INV-1001",
+    "vendor": "Corvina Freight Systems LLC",
+    "invoice_date": "2026-07-10",
+    "total": 250681.6,
+    "decision": "DISPUTE",
+    "total_delta_usd": 4180.0,
+    "status": "ok"
+  },
+  {
+    "invoice_no": "INV-1005",
+    "vendor": "Corvina Freight Systems LLC",
+    "invoice_date": "2026-09-02",
+    "total": 2170.0,
+    "decision": "FLAG",
+    "total_delta_usd": 0.0,
+    "status": "ok"
+  },
+  {
+    "invoice_no": "INV-1003",
+    "vendor": "Corvina Freight Systems LLC",
+    "invoice_date": "2026-06-05",
+    "total": 12234.6,
+    "decision": "APPROVE",
+    "total_delta_usd": 0.0,
+    "status": "ok"
+  },
+  {
+    "invoice_no": "INV-1007",
+    "vendor": "Heliotrope Cloud Hosting, Inc.",
+    "invoice_date": "2026-04-08",
+    "total": 5784.0,
+    "decision": null,
+    "total_delta_usd": null,
+    "status": "pending"
+  }
+]

@@ -1,0 +1,9 @@
+openai
+pydantic
+python-dotenv
+fastapi
+uvicorn
+python-multipart
+pdfplumber
+prismtrace-sdk>=0.5.3
+langchain-core

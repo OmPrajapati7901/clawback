@@ -1,0 +1,22 @@
+{
+  "invoice_no": "INV-1002",
+  "vendor_name_raw": "corvina freight systems llc",
+  "invoice_date": "2026-05-27",
+  "line_items": [
+    {
+      "sku": "FR-100",
+      "description": "Palletized LTL freight, dry van, origin to destination",
+      "qty": 180,
+      "unit_price": 46.75,
+      "amount": 8415.0
+    },
+    {
+      "sku": "FR-300",
+      "description": "Container drayage, port to customer warehouse",
+      "qty": 6,
+      "unit_price": 185.0,
+      "amount": 1110.0
+    }
+  ],
+  "total": 9525.0
+}

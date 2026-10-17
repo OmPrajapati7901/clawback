@@ -1,0 +1,29 @@
+{
+  "invoice_no": "INV-1012",
+  "vendor_name_raw": "Heliotrope Cloud Hosting, Inc.",
+  "invoice_date": "2026-09-15",
+  "line_items": [
+    {
+      "sku": "HC-200",
+      "description": "Object storage, standard durability",
+      "qty": 30000,
+      "unit_price": 0.02,
+      "amount": 600.0
+    },
+    {
+      "sku": "HC-400",
+      "description": "Bandwidth overage beyond the committed allowance",
+      "qty": 1500,
+      "unit_price": 0.09,
+      "amount": 135.0
+    },
+    {
+      "sku": "HC-500",
+      "description": "Snapshot storage retention",
+      "qty": 800,
+      "unit_price": 0.05,
+      "amount": 40.0
+    }
+  ],
+  "total": 775.0
+}

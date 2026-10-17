@@ -1,0 +1,53 @@
+{
+  "invoice": {
+    "invoice_no": "INV-1005",
+    "vendor_name_raw": "Corvina Freight Systems LLC",
+    "invoice_date": "2026-09-02",
+    "line_items": [
+      {
+        "sku": "FR-990",
+        "description": "After-hours dispatch surcharge",
+        "qty": 3,
+        "unit_price": 120.0,
+        "amount": 360.0
+      },
+      {
+        "sku": "FR-200",
+        "description": "Expedited next-day delivery, committed window",
+        "qty": 15,
+        "unit_price": 96.0,
+        "amount": 1440.0
+      },
+      {
+        "sku": "FR-300",
+        "description": "Container drayage, port to customer warehouse",
+        "qty": 2,
+        "unit_price": 185.0,
+        "amount": 370.0
+      }
+    ],
+    "total": 2170.0
+  },
+  "result": {
+    "invoice_no": "INV-1005",
+    "version": "v1",
+    "decision": "FLAG",
+    "findings": [
+      {
+        "billed_amount": 360.0,
+        "citation_verified": true,
+        "clause_id": "2.1",
+        "clause_quote": "The only charges that may be invoiced under this Agreement are the rates and bands expressly identified in Section 3.2 and Section 4.1, and the pass-through amounts permitted by Section 3.3.",
+        "delta_usd": 0.0,
+        "expected_amount": 360.0,
+        "explanation": "SKU FR-990 does not appear anywhere in the agreement for this vendor, so it cannot be priced.",
+        "sku": "FR-990",
+        "type": "UNKNOWN_SKU"
+      }
+    ],
+    "total_delta_usd": 0.0,
+    "dispute_email": null,
+    "run_status": "ok",
+    "trace_id": "19fbe1b9-b1a2-4fe1-9216-1f678e1bc4ec"
+  }
+}

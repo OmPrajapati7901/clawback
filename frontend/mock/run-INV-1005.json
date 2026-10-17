@@ -1,0 +1,156 @@
+[
+  {
+    "step": "parse_invoice",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "parse_invoice",
+    "status": "ok",
+    "detail": "INV-1005: 3 lines, total $2,170.00",
+    "ms": 27,
+    "result": null
+  },
+  {
+    "step": "resolve_vendor",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "resolve_vendor",
+    "status": "ok",
+    "detail": "'Corvina Freight Systems LLC' \u2192 corvina_freight",
+    "ms": 1,
+    "result": null
+  },
+  {
+    "step": "load_contract_terms",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "load_contract_terms",
+    "status": "ok",
+    "detail": "corvina_freight: extracted terms, 18 clauses",
+    "ms": 41,
+    "result": null
+  },
+  {
+    "step": "compute_expected",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "compute_expected",
+    "status": "ok",
+    "detail": "3 lines priced, contract year 2",
+    "ms": 3,
+    "result": null
+  },
+  {
+    "step": "compare_lines",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "compare_lines",
+    "status": "ok",
+    "detail": "1 findings, delta $0.00",
+    "ms": 3,
+    "result": null
+  },
+  {
+    "step": "explain_findings",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "explain_findings",
+    "status": "ok",
+    "detail": "explained 1/1",
+    "ms": 2140,
+    "result": null
+  },
+  {
+    "step": "verify_citations",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "verify_citations",
+    "status": "ok",
+    "detail": "1/1 citations verified",
+    "ms": 2,
+    "result": null
+  },
+  {
+    "step": "decide_and_draft",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "decide_and_draft",
+    "status": "ok",
+    "detail": "FLAG, total delta $0.00",
+    "ms": 1480,
+    "result": null
+  },
+  {
+    "step": "grade",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "grade",
+    "status": "ok",
+    "detail": "matches label",
+    "ms": 2,
+    "result": null
+  },
+  {
+    "step": "result",
+    "status": "ok",
+    "detail": "FLAG",
+    "ms": 0,
+    "result": {
+      "invoice_no": "INV-1005",
+      "version": "v1",
+      "decision": "FLAG",
+      "findings": [
+        {
+          "billed_amount": 360.0,
+          "citation_verified": true,
+          "clause_id": "2.1",
+          "clause_quote": "The only charges that may be invoiced under this Agreement are the rates and bands expressly identified in Section 3.2 and Section 4.1, and the pass-through amounts permitted by Section 3.3.",
+          "delta_usd": 0.0,
+          "expected_amount": 360.0,
+          "explanation": "SKU FR-990 does not appear anywhere in the agreement for this vendor, so it cannot be priced.",
+          "sku": "FR-990",
+          "type": "UNKNOWN_SKU"
+        }
+      ],
+      "total_delta_usd": 0.0,
+      "dispute_email": null,
+      "run_status": "ok",
+      "trace_id": "19fbe1b9-b1a2-4fe1-9216-1f678e1bc4ec"
+    }
+  }
+]

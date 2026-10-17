@@ -1,0 +1,159 @@
+[
+  {
+    "step": "parse_invoice",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "parse_invoice",
+    "status": "ok",
+    "detail": "INV-1007: 2 lines, total $5,784.00",
+    "ms": 39,
+    "result": null
+  },
+  {
+    "step": "resolve_vendor",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "resolve_vendor",
+    "status": "ok",
+    "detail": "'Heliotrope Cloud Hosting, Inc.' \u2192 heliotrope_cloud",
+    "ms": 2,
+    "result": null
+  },
+  {
+    "step": "load_contract_terms",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "load_contract_terms",
+    "status": "ok",
+    "detail": "heliotrope_cloud: extracted terms, 18 clauses",
+    "ms": 3870,
+    "result": null
+  },
+  {
+    "step": "compute_expected",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "compute_expected",
+    "status": "ok",
+    "detail": "2 lines priced, contract year 1",
+    "ms": 5,
+    "result": null
+  },
+  {
+    "step": "compare_lines",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "compare_lines",
+    "status": "ok",
+    "detail": "1 findings, delta $300.00",
+    "ms": 4,
+    "result": null
+  },
+  {
+    "step": "explain_findings",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "explain_findings",
+    "status": "ok",
+    "detail": "explained 1/1",
+    "ms": 3310,
+    "result": null
+  },
+  {
+    "step": "verify_citations",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "verify_citations",
+    "status": "ok",
+    "detail": "1/1 citations verified",
+    "ms": 3,
+    "result": null
+  },
+  {
+    "step": "decide_and_draft",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "decide_and_draft",
+    "status": "ok",
+    "detail": "DISPUTE, total delta $300.00",
+    "ms": 5220,
+    "result": null
+  },
+  {
+    "step": "grade",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "grade",
+    "status": "ok",
+    "detail": "matches label",
+    "ms": 2,
+    "result": null
+  },
+  {
+    "step": "result",
+    "status": "ok",
+    "detail": "DISPUTE",
+    "ms": 0,
+    "result": {
+      "invoice_no": "INV-1007",
+      "version": "v1",
+      "decision": "DISPUTE",
+      "findings": [
+        {
+          "billed_amount": 4020.0,
+          "citation_verified": true,
+          "clause_id": "3.2",
+          "clause_quote": "A managed PostgreSQL instance (SKU HC-300) is charged at $310.00 per instance-month.",
+          "delta_usd": 300.0,
+          "expected_amount": 3720.0,
+          "explanation": "HC-300 billed at $335.00 per unit; the agreement fixes the rate at $310.00.",
+          "sku": "HC-300",
+          "type": "RATE_MISMATCH"
+        }
+      ],
+      "total_delta_usd": 300.0,
+      "dispute_email": {
+        "subject": "Invoice INV-1007 \u2014 HC-300 billed above the contract rate",
+        "body": "Hello,\n\nWe reviewed invoice INV-1007 against our Master Services Agreement. Managed PostgreSQL instances (SKU HC-300) are billed at $335.00 per instance-month, while Section 3.2 fixes the rate at $310.00 per instance-month.\n\n- HC-300: 12 instance-months billed at $335.00, $3,720.00 allowed, overcharge $300.00 (Section 3.2)\n\nTotal overcharge: $300.00\n\nPlease send a corrected invoice or credit memo for $300.00.\n\nAccounts Payable"
+      },
+      "run_status": "ok",
+      "trace_id": "35b8fd32-08a8-4897-874b-a24ca4bdd433"
+    }
+  }
+]

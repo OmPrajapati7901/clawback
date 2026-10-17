@@ -1,0 +1,22 @@
+{
+  "invoice_no": "INV-1008",
+  "vendor_name_raw": "HELIOTROPE CLOUD HOSTING INC",
+  "invoice_date": "2026-05-21",
+  "line_items": [
+    {
+      "sku": "HC-100",
+      "description": "Compute instance, standard tier, Linux",
+      "qty": 8000,
+      "unit_price": 0.44,
+      "amount": 3520.0
+    },
+    {
+      "sku": "HC-400",
+      "description": "Bandwidth overage beyond the committed allowance",
+      "qty": 900,
+      "unit_price": 0.09,
+      "amount": 81.0
+    }
+  ],
+  "total": 3601.0
+}

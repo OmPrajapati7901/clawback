@@ -1,0 +1,29 @@
+{
+  "invoice_no": "INV-1024",
+  "vendor_name_raw": "Pinecrest Office Supply Co., LLC",
+  "invoice_date": "2026-08-11",
+  "line_items": [
+    {
+      "sku": "PS-100",
+      "description": "Multipurpose copy paper, 20 lb, 10-ream case",
+      "qty": 38,
+      "unit_price": 38.4,
+      "amount": 1459.2
+    },
+    {
+      "sku": "PS-500",
+      "description": "Two-drawer filing cabinet, letter size",
+      "qty": 3,
+      "unit_price": 168.0,
+      "amount": 504.0
+    },
+    {
+      "sku": "PS-400",
+      "description": "Ergonomic task chair, mid-back",
+      "qty": 1,
+      "unit_price": 215.0,
+      "amount": 215.0
+    }
+  ],
+  "total": 2178.2
+}

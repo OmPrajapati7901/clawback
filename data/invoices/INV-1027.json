@@ -1,0 +1,22 @@
+{
+  "invoice_no": "INV-1027",
+  "vendor_name_raw": "Kestrel Staffing Partners, Inc.",
+  "invoice_date": "2026-07-07",
+  "line_items": [
+    {
+      "sku": "KS-990",
+      "description": "Background check administration fee",
+      "qty": 1,
+      "unit_price": 150.0,
+      "amount": 150.0
+    },
+    {
+      "sku": "KS-300",
+      "description": "Data entry clerk, per hour worked",
+      "qty": 200,
+      "unit_price": 42.0,
+      "amount": 8400.0
+    }
+  ],
+  "total": 8550.0
+}

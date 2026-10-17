@@ -1,0 +1,159 @@
+[
+  {
+    "step": "parse_invoice",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "parse_invoice",
+    "status": "ok",
+    "detail": "INV-1001: 3 lines, total $250,681.60",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "resolve_vendor",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "resolve_vendor",
+    "status": "ok",
+    "detail": "'Corvina Freight Systems LLC' \u2192 corvina_freight",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "load_contract_terms",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "load_contract_terms",
+    "status": "ok",
+    "detail": "corvina_freight: cached terms, 18 clauses",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "compute_expected",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "compute_expected",
+    "status": "ok",
+    "detail": "3 lines priced, contract year 2",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "compare_lines",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "compare_lines",
+    "status": "ok",
+    "detail": "1 findings, delta $4,180.00",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "explain_findings",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "explain_findings",
+    "status": "ok",
+    "detail": "explained 1/1",
+    "ms": 132,
+    "result": null
+  },
+  {
+    "step": "verify_citations",
+    "status": "ok",
+    "detail": "1/1 citations verified",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "verify_citations",
+    "status": "ok",
+    "detail": "1/1 citations verified",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "decide_and_draft",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "decide_and_draft",
+    "status": "ok",
+    "detail": "DISPUTE, total delta $4,180.00",
+    "ms": 22,
+    "result": null
+  },
+  {
+    "step": "grade",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "grade",
+    "status": "ok",
+    "detail": "matches label",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "result",
+    "status": "ok",
+    "detail": "DISPUTE",
+    "ms": 0,
+    "result": {
+      "invoice_no": "INV-1001",
+      "version": "v1",
+      "decision": "DISPUTE",
+      "findings": [
+        {
+          "type": "ESCALATOR_EXCEEDED",
+          "sku": "FR-200",
+          "billed_amount": 225385.6,
+          "expected_amount": 221205.6,
+          "delta_usd": 4180.0,
+          "clause_id": "7.2",
+          "clause_quote": "On each anniversary of the Effective Date, Carrier may adjust the unit rates set out in Section 3.2 by no more than five percent (5.0%) of the rate in effect immediately before that anniversary, compounded annually over the Term.",
+          "citation_verified": true,
+          "explanation": "The invoice billed $225,385.60 for SKU FR-200 but the maximum allowed under the 5% annual escalator cap is $221,205.60, resulting in a $4,180.00 overcharge that exceeds the permitted rate increase and is therefore not chargeable under Section 7.2."
+        }
+      ],
+      "total_delta_usd": 4180.0,
+      "dispute_email": {
+        "subject": "Invoice Dispute \u2013 INV-1001 (Corvina Freight Systems LLC) \u2013 Overcharge of $4,180.00",
+        "body": "Dear Corvina Freight Systems LLC Accounts Receivable Team,\n\nWe are writing to dispute Invoice INV-1001, dated 2026-07-10, due to a billing discrepancy identified during our review.\n\nLine item FR-200 was billed at $225,385.60; per the contract, the allowable amount is $221,205.60, resulting in an overcharge of $4,180.00. This charge violates Clause 7.2, which states: \"On each anniversary of the Effective Date, Carrier may adjust the unit rates set out in Section 3.2 by no more than five percent (5.0%) of the rate in effect immediately before that anniversary, compounded annually over the Term. A rate increase above the five percent (5.0%) ceiling in any contract year is not chargeable, and Customer may treat any invoice line that applies such an increase as an overcharge.\" The applied increase exceeds the 5.0% annual escalator ceiling permitted under this clause.\n\nTotal overcharge identified on this invoice: $4,180.00.\n\nPlease issue a corrected invoice or a credit memo for $4,180.00 to resolve this discrepancy. Kindly confirm receipt of this dispute and provide an expected resolution date.\n\nThank you for your prompt attention to this matter.\n\nBest regards,\nAccounts Payable"
+      },
+      "run_status": "ok",
+      "trace_id": "f00d516a-8f49-4889-8346-10174014aab1"
+    }
+  }
+]

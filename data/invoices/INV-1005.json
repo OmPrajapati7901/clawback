@@ -1,0 +1,29 @@
+{
+  "invoice_no": "INV-1005",
+  "vendor_name_raw": "Corvina Freight Systems LLC",
+  "invoice_date": "2026-09-02",
+  "line_items": [
+    {
+      "sku": "FR-990",
+      "description": "After-hours dispatch surcharge",
+      "qty": 3,
+      "unit_price": 120.0,
+      "amount": 360.0
+    },
+    {
+      "sku": "FR-200",
+      "description": "Expedited next-day delivery, committed window",
+      "qty": 15,
+      "unit_price": 96.0,
+      "amount": 1440.0
+    },
+    {
+      "sku": "FR-300",
+      "description": "Container drayage, port to customer warehouse",
+      "qty": 2,
+      "unit_price": 185.0,
+      "amount": 370.0
+    }
+  ],
+  "total": 2170.0
+}

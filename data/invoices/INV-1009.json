@@ -1,0 +1,22 @@
+{
+  "invoice_no": "INV-1009",
+  "vendor_name_raw": "Heliotrope Cloud Hosting, Inc.",
+  "invoice_date": "2026-06-12",
+  "line_items": [
+    {
+      "sku": "HC-200",
+      "description": "Object storage, standard durability",
+      "qty": 109999,
+      "unit_price": 0.02,
+      "amount": 2199.98
+    },
+    {
+      "sku": "HC-500",
+      "description": "Snapshot storage retention",
+      "qty": 2400,
+      "unit_price": 0.05,
+      "amount": 120.0
+    }
+  ],
+  "total": 2319.98
+}

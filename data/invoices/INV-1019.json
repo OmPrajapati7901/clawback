@@ -1,0 +1,22 @@
+{
+  "invoice_no": "INV-1019",
+  "vendor_name_raw": "Pinecrest Office Supply Company",
+  "invoice_date": "2026-03-26",
+  "line_items": [
+    {
+      "sku": "PS-100",
+      "description": "Multipurpose copy paper, 20 lb, 10-ream case",
+      "qty": 240,
+      "unit_price": 34.25,
+      "amount": 8220.0
+    },
+    {
+      "sku": "PS-200",
+      "description": "Printer toner cartridge, black, high yield",
+      "qty": 12,
+      "unit_price": 92.5,
+      "amount": 1110.0
+    }
+  ],
+  "total": 9330.0
+}

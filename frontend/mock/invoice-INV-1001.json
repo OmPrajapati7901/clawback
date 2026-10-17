@@ -1,0 +1,56 @@
+{
+  "invoice": {
+    "invoice_no": "INV-1001",
+    "vendor_name_raw": "Corvina Freight Systems LLC",
+    "invoice_date": "2026-07-10",
+    "line_items": [
+      {
+        "sku": "FR-200",
+        "description": "Expedited next-day delivery, committed window",
+        "qty": 2090,
+        "unit_price": 107.84,
+        "amount": 225385.6
+      },
+      {
+        "sku": "FR-100",
+        "description": "Palletized LTL freight, dry van, origin to destination",
+        "qty": 340,
+        "unit_price": 42.4,
+        "amount": 14416.0
+      },
+      {
+        "sku": "FR-400",
+        "description": "Cross-dock handling and palletization",
+        "qty": 850,
+        "unit_price": 12.8,
+        "amount": 10880.0
+      }
+    ],
+    "total": 250681.6
+  },
+  "result": {
+    "invoice_no": "INV-1001",
+    "version": "v1",
+    "decision": "DISPUTE",
+    "findings": [
+      {
+        "billed_amount": 225385.6,
+        "citation_verified": true,
+        "clause_id": "7.2",
+        "clause_quote": "On each anniversary of the Effective Date, Carrier may adjust the unit rates set out in Section 3.2 by no more than five percent (5.0%) of the rate in effect immediately before that anniversary, compounded annually over the Term.",
+        "delta_usd": 4180.0,
+        "expected_amount": 221205.6,
+        "explanation": "FR-200 billed at $107.84 per unit; after 2 full contract year(s) the agreement allows at most $105.84.",
+        "sku": "FR-200",
+        "type": "ESCALATOR_EXCEEDED"
+      }
+    ],
+    "total_delta_usd": 4180.0,
+    "dispute_email": {
+      "subject": "Invoice INV-1001 \u2014 rate increase above the contract ceiling",
+      "body": "Hello,\n\nWe reviewed invoice INV-1001 dated 2026-07-10 against our Master Services Agreement.\nExpedited next-day delivery (SKU FR-200) is billed at $107.84 per unit, while Section 7.2 allows no more than $105.84 per unit after two annual adjustments.\n\n- FR-200: 2,090 units billed at $107.84, $221,205.60 allowed, overcharge $4,180.00 (Section 7.2)\n\nTotal overcharge: $4,180.00\n\nPlease send a corrected invoice or credit memo for $4,180.00.\n\nAccounts Payable"
+    },
+    "run_status": "ok",
+    "trace_id": "21d905a4-f8fa-4ce0-b740-e2cda7ed255c"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "invoice_no": "INV-1020",
+  "vendor_name_raw": "Pinecrest Office Supply Company",
+  "invoice_date": "2026-04-30",
+  "line_items": [
+    {
+      "sku": "PS-200",
+      "description": "Printer toner cartridge, black, high yield",
+      "qty": 40,
+      "unit_price": 99.0,
+      "amount": 3960.0
+    },
+    {
+      "sku": "PS-300",
+      "description": "Breakroom supply box, assorted",
+      "qty": 8,
+      "unit_price": 46.75,
+      "amount": 374.0
+    }
+  ],
+  "total": 4334.0
+}

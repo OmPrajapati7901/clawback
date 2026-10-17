@@ -1,0 +1,22 @@
+{
+  "invoice_no": "INV-1028",
+  "vendor_name_raw": "Kestrel Staffing Partners",
+  "invoice_date": "2026-03-12",
+  "line_items": [
+    {
+      "sku": "KS-200",
+      "description": "Senior engineer, per hour worked",
+      "qty": 160,
+      "unit_price": 145.0,
+      "amount": 23200.0
+    },
+    {
+      "sku": "KS-300",
+      "description": "Data entry clerk, per hour worked",
+      "qty": 340,
+      "unit_price": 42.0,
+      "amount": 14280.0
+    }
+  ],
+  "total": 37480.0
+}

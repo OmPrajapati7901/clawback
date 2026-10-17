@@ -1,0 +1,41 @@
+[
+  {
+    "vendor_id": "corvina_freight",
+    "canonical_name": "Corvina Freight Systems LLC",
+    "aliases": [
+      "Corvina Freight",
+      "Corvina Freight Systems"
+    ]
+  },
+  {
+    "vendor_id": "heliotrope_cloud",
+    "canonical_name": "Heliotrope Cloud Hosting, Inc.",
+    "aliases": [
+      "Heliotrope Cloud",
+      "Heliotrope Hosting"
+    ]
+  },
+  {
+    "vendor_id": "brightloom_facilities",
+    "canonical_name": "Brightloom Facilities Services",
+    "aliases": [
+      "Brightloom Facilities",
+      "Brightloom Services"
+    ]
+  },
+  {
+    "vendor_id": "pinecrest_supply",
+    "canonical_name": "Pinecrest Office Supply Company",
+    "aliases": [
+      "Pinecrest Supply",
+      "Pinecrest Office"
+    ]
+  },
+  {
+    "vendor_id": "kestrel_staffing",
+    "canonical_name": "Kestrel Staffing Partners",
+    "aliases": [
+      "Kestrel Staffing"
+    ]
+  }
+]

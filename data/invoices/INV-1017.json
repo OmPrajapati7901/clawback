@@ -1,0 +1,36 @@
+{
+  "invoice_no": "INV-1017",
+  "vendor_name_raw": "Brightloom Facilities Services",
+  "invoice_date": "2026-08-06",
+  "line_items": [
+    {
+      "sku": "BF-500",
+      "description": "Hard-floor care and refinishing, measured area",
+      "qty": 19999,
+      "unit_price": 0.14,
+      "amount": 2799.86
+    },
+    {
+      "sku": "BF-500",
+      "description": "Hard-floor care and refinishing, measured area",
+      "qty": 55000,
+      "unit_price": 0.11,
+      "amount": 6050.0
+    },
+    {
+      "sku": "BF-500",
+      "description": "Hard-floor care and refinishing, measured area",
+      "qty": 200,
+      "unit_price": 0.085,
+      "amount": 17.0
+    },
+    {
+      "sku": "BF-200",
+      "description": "HVAC preventive maintenance, rooftop unit",
+      "qty": 2,
+      "unit_price": 420.0,
+      "amount": 840.0
+    }
+  ],
+  "total": 9706.86
+}

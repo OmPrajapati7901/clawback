@@ -1,0 +1,22 @@
+{
+  "invoice_no": "INV-1013",
+  "vendor_name_raw": "Brightloom Facilities Services",
+  "invoice_date": "2026-04-02",
+  "line_items": [
+    {
+      "sku": "BF-500",
+      "description": "Hard-floor care and refinishing, measured area",
+      "qty": 60000,
+      "unit_price": 0.14,
+      "amount": 8400.0
+    },
+    {
+      "sku": "BF-100",
+      "description": "Janitorial service visit, standard site",
+      "qty": 9,
+      "unit_price": 185.0,
+      "amount": 1665.0
+    }
+  ],
+  "total": 10065.0
+}

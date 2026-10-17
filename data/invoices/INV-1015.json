@@ -1,0 +1,22 @@
+{
+  "invoice_no": "INV-1015",
+  "vendor_name_raw": "Brightloom Facilities Services",
+  "invoice_date": "2026-06-08",
+  "line_items": [
+    {
+      "sku": "BF-200",
+      "description": "HVAC preventive maintenance, rooftop unit",
+      "qty": 4,
+      "unit_price": 420.0,
+      "amount": 1760.0
+    },
+    {
+      "sku": "BF-300",
+      "description": "Landscaping service visit, grounds maintenance",
+      "qty": 6,
+      "unit_price": 140.0,
+      "amount": 840.0
+    }
+  ],
+  "total": 2600.0
+}

@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en" class="lg:h-full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clawback — invoice audit against contract</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23C0291B'/%3E%3C/svg%3E">
+
+<!-- Pinned CDN dependencies, with local copies for an offline demo. Geist is local. -->
+<script>
+  function loadLocalScript(path, onload) {
+    const script = document.createElement('script');
+    script.src = path;
+    if (onload) script.onload = onload;
+    document.head.appendChild(script);
+  }
+  window.clawbackTailwindConfig = {
+    theme: {
+      extend: {
+        colors: {
+          paper: '#F5F7F9',
+          surface: '#FFFFFF',
+          hairline: '#E2E6EB',
+          ink: { DEFAULT: '#121A26', muted: '#5B6675', faint: '#687587' },
+          red: { ink: '#C0291B', wash: '#FBECEA' },
+          green: { ink: '#0E6B41', wash: '#E9F4EE' },
+          ochre: { ink: '#9A6100', wash: '#FBF1DF' },
+          marker: '#F6E58A',
+        },
+        fontFamily: {
+          sans: ['Geist', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          mono: ['Geist Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+        },
+        boxShadow: {
+          panel: '0 1px 2px rgba(18,26,38,.04), 0 10px 26px -18px rgba(18,26,38,.16)',
+          lift: '0 2px 5px rgba(18,26,38,.06), 0 18px 36px -18px rgba(18,26,38,.22)',
+          doc: '0 1px 1px rgba(18,26,38,.05), 0 16px 40px -22px rgba(18,26,38,.22)',
+        },
+        borderRadius: { panel: '12px', control: '8px' },
+      },
+    },
+  };
+</script>
+<script src="https://cdn.tailwindcss.com/3.4.17" onload="tailwind.config = window.clawbackTailwindConfig" onerror="loadLocalScript('vendor/tailwind-3.4.17.js', () => { tailwind.config = window.clawbackTailwindConfig; })"></script>
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js" onerror="loadLocalScript('vendor/alpine-3.14.9.min.js')" defer></script>
+</head>
+
+<body class="bg-paper font-sans text-ink antialiased lg:h-full">
+<div id="boot"><span class="mark"></span>Clawback — opening the audit desk…</div>
+
+<div x-data="clawback" x-cloak class="flex min-h-full flex-col lg:h-full lg:overflow-hidden">
+
+  <!-- ── Top bar ─────────────────────────────────────────────────────────── -->
+  <header class="z-30 shrink-0 border-b border-hairline bg-surface/85 backdrop-blur">
+    <div class="flex h-14 items-center gap-3 px-4 sm:gap-4 sm:px-5">
+      <a href="?" class="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/40 rounded-control">
+        <span class="h-2.5 w-2.5 rounded-[3px] bg-red-ink"></span>
+        <span class="text-[17px] font-semibold tracking-[-.01em]">Clawback</span>
+      </a>
+      <span class="hidden text-[12.5px] text-ink-muted md:block">Invoice audit against contract</span>
+
+      <div class="ml-auto flex items-center gap-3 sm:gap-5">
+        <div class="flex items-baseline gap-2">
+          <span class="text-[12.5px] text-ink-muted">Recovered</span>
+          <span class="font-mono text-[20px] font-medium leading-none tracking-[-.02em] tabular-nums sm:text-[28px]"
+                x-text="money(shownRecovered)"></span>
+        </div>
+        <div class="hidden items-center gap-5 border-l border-hairline pl-5 lg:flex">
+          <template x-for="s in topStats" :key="s.key">
+            <div class="text-right">
+              <div class="text-[11.5px] leading-tight text-ink-muted" x-text="s.label"></div>
+              <div class="font-mono text-[14.5px] leading-tight tabular-nums" x-text="s.value"></div>
+            </div>
+          </template>
+        </div>
+        <span x-show="mock" class="hidden rounded-full border border-ochre-ink/25 bg-ochre-wash px-2.5 py-1 text-[11.5px] font-medium text-ochre-ink sm:inline-flex"
+              title="Fixtures from frontend/mock, no backend needed">Mock data</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Workbench ───────────────────────────────────────────────────────── -->
+  <main class="grid flex-1 grid-cols-1 lg:min-h-0 lg:grid-cols-[340px_minmax(0,1fr)]">
+
+    <!-- Inbox rail -->
+    <aside class="flex flex-col border-b border-hairline bg-surface lg:min-h-0 lg:border-b-0 lg:border-r"
+           :class="detail ? 'hidden lg:flex' : 'flex'"
+           @dragover.prevent="dragOver = true" @dragleave.prevent="dragOver = false" @drop.prevent="onDrop($event)">
+      <div class="flex shrink-0 items-center justify-between border-b border-hairline px-4 py-3">
+        <div class="flex items-baseline gap-2">
+          <h2 x-ref="inboxHeading" tabindex="-1" class="text-[13px] font-medium">Inbox</h2>
+          <span class="font-mono text-[12px] tabular-nums text-ink-muted" x-text="invoices.length || ''"></span>
+        </div>
+        <div class="flex items-center gap-2">
+          <button type="button" @click="$refs.fileInput.click()"
+                  class="rounded-control border border-hairline bg-surface px-2.5 py-1.5 text-[12px] font-medium transition hover:bg-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/40"
+                  :disabled="uploading">
+            <span x-show="!uploading">Upload</span>
+            <span x-show="uploading">Uploading…</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="scroll-thin min-h-0 flex-1 overflow-y-auto" :class="dragOver ? 'ring-2 ring-inset ring-red-ink/40' : ''">
+        <template x-if="loadingInvoices">
+          <div>
+            <template x-for="i in 4" :key="i">
+              <div class="border-b border-hairline px-4 py-3.5">
+                <div class="skel h-3.5 w-2/3 rounded"></div>
+                <div class="skel mt-2 h-3 w-1/3 rounded"></div>
+              </div>
+            </template>
+          </div>
+        </template>
+
+        <div x-show="inboxError" role="alert" class="px-5 py-6">
+          <p class="text-[13px] text-red-ink" x-text="inboxError"></p>
+          <button type="button" @click="loadInvoices(); loadStats()" class="mt-3 rounded-control border border-hairline px-3 py-2 text-[13px] font-medium">Retry inbox</button>
+        </div>
+
+        <template x-if="!loadingInvoices && !inboxError && invoices.length === 0">
+          <div class="px-5 py-10 text-center">
+            <div class="text-[13.5px] font-medium">No invoices yet</div>
+            <p class="mx-auto mt-1 max-w-[220px] text-[12.5px] leading-relaxed text-ink-muted">
+              Drop a PDF or JSON invoice anywhere in this panel to start the first audit.
+            </p>
+          </div>
+        </template>
+
+        <template x-for="row in invoices" :key="row.invoice_no">
+          <button type="button" @click="openInvoice(row.invoice_no)"
+                  :aria-current="selectedNo === row.invoice_no ? 'true' : null"
+                  class="relative block w-full border-b border-hairline px-4 py-3 text-left transition hover:bg-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ink/40"
+                  :class="selectedNo === row.invoice_no ? 'bg-paper' : ''">
+            <span x-show="selectedNo === row.invoice_no" class="absolute inset-y-0 left-0 w-[3px] bg-red-ink"></span>
+            <span class="flex items-start justify-between gap-3">
+              <span class="min-w-0">
+                <span class="block truncate text-[13.5px] font-medium leading-snug" x-text="row.vendor"></span>
+                <span class="mt-1 flex items-center gap-2 text-[11.5px] text-ink-muted">
+                  <span class="font-mono" x-text="row.invoice_no"></span>
+                  <span class="font-mono tabular-nums" x-text="row.invoice_date"></span>
+                </span>
+              </span>
+              <span class="shrink-0 text-right">
+                <span class="inline-flex items-center gap-1.5 rounded-full border px-2 py-[3px] text-[11.5px] font-medium"
+                      :class="chipClass(row.decision)">
+                  <span class="h-1.5 w-1.5 rounded-full bg-current opacity-80"></span>
+                  <span x-text="chipLabel(row.decision)"></span>
+                </span>
+                <span class="mt-1.5 block font-mono text-[12px] tabular-nums"
+                      :class="rowDeltaClass(row)"
+                      x-text="rowDelta(row)"></span>
+              </span>
+            </span>
+          </button>
+        </template>
+      </div>
+    </aside>
+
+    <!-- Detail / start -->
+    <section class="flex min-w-0 flex-col lg:min-h-0" :class="detail ? 'flex' : 'hidden lg:flex'">
+
+      <!-- Empty state: the dropzone hero -->
+      <template x-if="!detail">
+        <div class="flex flex-1 items-center justify-center px-6 py-12">
+          <div class="w-full max-w-[560px]">
+            <div x-show="detailLoading" class="rounded-panel border border-hairline bg-surface p-8 shadow-panel">
+              <div class="skel h-4 w-1/3 rounded"></div>
+              <div class="skel mt-3.5 h-3 w-2/3 rounded"></div>
+              <div class="skel mt-2 h-3 w-1/2 rounded"></div>
+              <div class="skel mt-6 h-9 w-40 rounded-control"></div>
+            </div>
+            <div x-show="!detailLoading">
+            <div class="rounded-panel border-2 border-dashed bg-surface px-8 py-12 text-center transition"
+                 :class="dragOver ? 'border-red-ink bg-red-wash/40' : 'border-hairline'"
+                 @dragover.prevent="dragOver = true" @dragleave.prevent="dragOver = false" @drop.prevent="onDrop($event)">
+              <svg class="mx-auto h-9 w-9 text-ink-faint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5"/>
+                <path d="M4 15v2.5A2.5 2.5 0 0 0 6.5 20h11a2.5 2.5 0 0 0 2.5-2.5V15"/>
+              </svg>
+              <h2 class="mt-4 text-[19px] font-semibold tracking-[-.01em]">Audit a supplier invoice</h2>
+              <p class="mx-auto mt-2 max-w-[400px] text-[13.5px] leading-relaxed text-ink-muted">
+                Drop a PDF or JSON invoice here. Clawback reads the vendor's contract, checks
+                every line against it, and drafts the dispute.
+              </p>
+              <div class="mt-6 flex items-center justify-center gap-3">
+                <button type="button" @click="$refs.fileInput.click()" :disabled="uploading"
+                        class="rounded-control bg-ink px-4 py-2.5 text-[13px] font-medium text-white shadow-panel transition hover:bg-ink/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/40 focus-visible:ring-offset-2 disabled:opacity-60">
+                  <span x-show="!uploading">Choose a file</span>
+                  <span x-show="uploading">Uploading…</span>
+                </button>
+                <span class="text-[12.5px] text-ink-muted">or drop it on the inbox</span>
+              </div>
+
+              <template x-if="mock">
+                <div class="mt-8 border-t border-hairline pt-5">
+                  <div class="text-[12.5px] text-ink-muted">Mock mode — try a fixture:</div>
+                  <div class="mt-2.5 flex flex-wrap items-center justify-center gap-2">
+                    <template x-for="no in ['INV-1001', 'INV-1005', 'INV-1003', 'INV-1007']" :key="no">
+                      <button type="button" @click="openInvoice(no)"
+                              class="rounded-control border border-hairline bg-surface px-3 py-1.5 font-mono text-[12px] transition hover:bg-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/40"
+                              x-text="no"></button>
+                    </template>
+                  </div>
+                </div>
+              </template>
+
+              <p x-show="uploadError" x-text="uploadError" class="mt-4 text-[12.5px] font-medium text-red-ink"></p>
+            </div>
+
+            <p class="mt-4 text-center text-[12px] leading-relaxed text-ink-muted">
+              Every step is traced to PRISM. All data is synthetic.
+            </p>
+            </div>
+          </div>
+        </div>
+      </template>
+
+      <!-- Detail -->
+      <template x-if="detail">
+        <div class="scroll-thin flex min-h-0 flex-1 flex-col lg:overflow-y-auto">
+          <div class="sticky top-0 z-20 flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-hairline bg-surface/95 px-5 py-3 backdrop-blur">
+            <button type="button" @click="closeDetail()"
+                    class="rounded-control border border-hairline px-2 py-1 text-[12px] font-medium transition hover:bg-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/40 lg:hidden">
+              Inbox
+            </button>
+            <div x-ref="detailHeading" tabindex="-1" role="heading" aria-level="2" class="min-w-0">
+              <div class="flex items-baseline gap-2.5">
+                <span class="font-mono text-[15px] font-medium" x-text="detail?.invoice.invoice_no"></span>
+                <span class="font-mono text-[12.5px] tabular-nums text-ink-muted" x-text="detail?.invoice.invoice_date"></span>
+              </div>
+              <div class="truncate text-[12.5px] text-ink-muted" x-text="detail?.invoice.vendor_name_raw"></div>
+            </div>
+            <div class="ml-auto flex items-center gap-2.5">
+              <span x-show="!running && detail?.result" class="hidden font-mono text-[11.5px] text-ink-faint sm:block"
+                    x-text="lastRunText()"></span>
+              <button type="button" x-show="!running" @click="runInvoice(detail?.invoice.invoice_no)"
+                      class="flex items-center gap-2 rounded-control bg-ink px-3 py-1.5 text-[12.5px] font-medium text-white shadow-panel transition hover:bg-ink/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/40 focus-visible:ring-offset-2">
+                <span x-text="detail?.result ? 'Run again' : 'Run audit'"></span>
+                <span class="rounded bg-white/15 px-1.5 py-0.5 font-mono text-[10.5px]" x-text="version"></span>
+              </button>
+              <span x-show="running" class="inline-flex items-center gap-2 rounded-control border border-hairline bg-surface px-3 py-1.5 text-[12.5px] font-medium">
+                <span class="pulse-dot h-2 w-2 rounded-full bg-red-ink"></span>
+                Auditing…
+              </span>
+            </div>
+          </div>
+
+          <div class="space-y-4 px-5 py-4">
+
+            <!-- (1) Agent steps -->
+            <section class="rounded-panel border border-hairline bg-surface shadow-panel">
+              <div class="flex flex-wrap items-center gap-x-3 gap-y-1 px-4 pt-3.5">
+                <h3 class="text-[13px] font-medium">Agent steps</h3>
+                <span x-show="running && liveDetail" class="min-w-0 flex-1 truncate text-[12px] text-ink-muted" x-text="liveDetail"></span>
+                <span x-show="!running && hasLiveSteps" class="ml-auto font-mono text-[12px] tabular-nums text-ink-muted" x-text="totalMsText()"></span>
+              </div>
+              <div class="px-4 pb-4 pt-3">
+                <template x-if="!hasLiveSteps && !running">
+                  <p class="text-[12.5px] text-ink-muted">
+                    <span x-text="detail?.result ? 'A stored result is shown below. ' : ''"></span>
+                    Run the audit to watch each step live.
+                  </p>
+                </template>
+                <template x-if="hasLiveSteps || running">
+                  <ol class="flex flex-wrap items-center gap-x-2 gap-y-2">
+                    <template x-for="s in steps" :key="s.name">
+                      <li class="flex items-center gap-2 rounded-control border px-2.5 py-1.5 transition"
+                          :class="stepItemClass(s)" :title="s.detail" :aria-label="stepLabel(s.name) + ': ' + s.status + (s.detail ? '. ' + s.detail : '')">
+                        <span class="grid h-4 w-4 shrink-0 place-items-center">
+                          <span x-show="s.status === 'pending'" class="h-2 w-2 rounded-full border-[1.5px] border-hairline"></span>
+                          <span x-show="s.status === 'skipped'" aria-hidden="true">—</span>
+                          <svg x-show="s.status === 'running'" class="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-opacity=".18" stroke-width="3.5"/>
+                            <path d="M21 12a9 9 0 0 0-9-9" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+                          </svg>
+                          <svg x-show="s.status === 'ok'" class="h-4 w-4 text-green-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4.5 12.5l5 5 10-11"/>
+                          </svg>
+                          <svg x-show="s.status === 'error'" class="h-4 w-4 text-red-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                            <path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/>
+                          </svg>
+                        </span>
+                        <span class="text-[12.5px] font-medium" :class="s.status === 'pending' ? 'text-ink-faint' : ''" x-text="stepLabel(s.name)"></span>
+                        <span x-show="s.status === 'ok' || s.status === 'error'" class="font-mono text-[11px] tabular-nums text-ink-faint" x-text="s.ms + ' ms'"></span>
+                        <span x-show="s.status === 'running'" class="font-mono text-[11px] tabular-nums text-ink-faint" x-text="liveMs"></span>
+                      </li>
+                    </template>
+                  </ol>
+                </template>
+                <p x-show="runError" role="alert" x-text="runError" class="mt-2.5 text-[12.5px] font-medium text-red-ink"></p>
+              </div>
+            </section>
+
+            <div class="grid min-w-0 grid-cols-1 items-start gap-4 2xl:grid-cols-[minmax(0,1fr)_minmax(360px,420px)]">
+
+              <!-- Left column: the invoice document -->
+              <div class="min-w-0 space-y-4">
+                <section class="relative rounded-panel border border-hairline bg-surface shadow-doc">
+                  <div x-show="detail?.result" class="absolute right-5 top-5 z-10">
+                    <span class="stamp stamp-in text-[15px]" :class="stampClass(detail?.result?.decision)"
+                          x-text="stampLabel(detail?.result?.decision)"></span>
+                  </div>
+
+                  <div class="border-b border-hairline py-4 pl-5 pr-32">
+                    <div class="text-[11.5px] font-medium tracking-wide text-ink-faint">Invoice</div>
+                    <div class="mt-1 text-[18px] font-semibold tracking-[-.01em]" x-text="detail?.invoice.vendor_name_raw"></div>
+                    <div class="mt-1 flex flex-wrap items-center gap-3 text-[12.5px] text-ink-muted">
+                      <span class="font-mono" x-text="detail?.invoice.invoice_no"></span>
+                      <span class="font-mono tabular-nums" x-text="detail?.invoice.invoice_date"></span>
+                      <span class="font-mono tabular-nums" x-text="money(detail?.invoice.total)"></span>
+                    </div>
+                  </div>
+
+                  <p class="border-b border-hairline px-5 py-2 text-[12px] text-ink-muted sm:hidden">Swipe the table to see quantities and prices.</p>
+                  <div tabindex="0" role="region" aria-label="Invoice line items, scroll horizontally for all columns" class="min-w-0 overflow-x-auto">
+                    <table class="w-full min-w-[640px] border-collapse text-[14px]">
+                      <thead>
+                        <tr class="border-b border-hairline text-left text-[11.5px] font-medium text-ink-faint">
+                          <th class="px-5 py-2.5 font-medium">SKU</th>
+                          <th class="px-3 py-2.5 font-medium">Description</th>
+                          <th class="px-3 py-2.5 text-right font-medium">Qty</th>
+                          <th class="px-3 py-2.5 text-right font-medium">Unit price</th>
+                          <th class="px-5 py-2.5 text-right font-medium">Amount</th>
+                        </tr>
+                      </thead>
+                      <template x-for="(li, idx) in detail?.invoice.line_items" :key="idx">
+                        <tbody>
+                          <tr
+                              class="border-b border-hairline/70"
+                              :class="findingFor(li.sku) ? 'bg-red-wash/50' : ''">
+                            <td class="whitespace-nowrap px-5 py-2.5 font-mono text-[12.5px] align-top" x-text="li.sku"></td>
+                            <td class="px-3 py-2.5 text-ink-muted align-top" x-text="li.description"></td>
+                            <td class="px-3 py-2.5 text-right font-mono tabular-nums align-top" x-text="li.qty.toLocaleString('en-US')"></td>
+                            <td class="px-3 py-2.5 text-right font-mono tabular-nums align-top"
+                                :class="findingFor(li.sku) ? 'text-red-ink' : ''" x-text="money(li.unit_price)"></td>
+                            <td class="px-5 py-2.5 text-right font-mono tabular-nums align-top">
+                              <span :class="findingFor(li.sku) && findingFor(li.sku).delta_usd > 0 ? 'strike text-ink-muted' : ''" x-text="money(li.amount)"></span>
+                            </td>
+                          </tr>
+                          <tr x-show="lineNote(li)" class="border-b border-hairline/70 bg-red-wash/50">
+                            <td colspan="5" class="px-5 pb-2.5 pt-0 align-top">
+                              <span class="text-[12.5px] font-medium text-red-ink" x-text="lineNote(li)"></span>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </template>
+                      <tfoot>
+                        <tr class="border-t-2 border-ink/80">
+                          <td colspan="3" class="px-5 py-3 text-[12.5px] font-medium text-ink-muted">Total</td>
+                          <td class="px-3 py-3"></td>
+                          <td class="px-5 py-3 text-right font-mono text-[15px] font-medium tabular-nums">
+                            <span x-text="money(detail?.invoice.total)"></span>
+                          </td>
+                        </tr>
+                        <tr x-show="totalNote()" class="bg-red-wash/50">
+                          <td colspan="5" class="px-5 pb-3 pt-0">
+                            <span class="text-[12.5px] font-medium text-red-ink" x-text="totalNote()"></span>
+                          </td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                </section>
+
+              </div>
+
+              <!-- Right column: the audit file -->
+              <div class="min-w-0 space-y-4">
+                <template x-if="!detail?.result && !running && !detailLoading">
+                  <section class="rounded-panel border border-hairline bg-surface px-5 py-8 text-center shadow-panel">
+                    <div class="text-[14px] font-medium">Not audited yet</div>
+                    <p class="mx-auto mt-1.5 max-w-[300px] text-[12.5px] leading-relaxed text-ink-muted">
+                      No findings or clauses until the agent runs. Start it to watch each step.
+                    </p>
+                    <button type="button" @click="runInvoice(detail?.invoice.invoice_no)"
+                            class="mt-4 rounded-control bg-ink px-3.5 py-2 text-[12.5px] font-medium text-white shadow-panel transition hover:bg-ink/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/40 focus-visible:ring-offset-2">
+                      Run audit
+                    </button>
+                  </section>
+                </template>
+
+                <template x-if="running && !detail?.result">
+                  <section class="rounded-panel border border-hairline bg-surface p-5 shadow-panel">
+                    <div class="skel h-5 w-2/3 rounded"></div>
+                    <div class="skel mt-3 h-3.5 w-full rounded"></div>
+                    <div class="skel mt-2 h-3.5 w-4/5 rounded"></div>
+                  </section>
+                </template>
+
+                <!-- Verdict -->
+                <template x-if="detail?.result">
+                  <section class="rounded-panel border border-hairline bg-surface shadow-panel">
+                    <div class="flex items-start justify-between gap-4 px-5 py-4">
+                      <div class="min-w-0">
+                        <div class="text-[12.5px] text-ink-muted" x-text="running || runError ? 'Previous verdict' : 'Verdict'"></div>
+                        <div class="mt-0.5 text-[21px] font-semibold leading-tight tracking-[-.015em]" x-text="verdictTitle()"></div>
+                        <p class="mt-1.5 text-[12.5px] leading-relaxed text-ink-muted" x-text="verdictSub()"></p>
+                      </div>
+                      <span class="shrink-0 rounded-full border px-2.5 py-1 text-[12px] font-medium"
+                            :class="chipClass(detail?.result.decision)" x-text="chipLabel(detail?.result.decision)"></span>
+                    </div>
+                    <div class="flex items-center justify-between gap-3 border-t border-hairline px-5 py-2.5 text-[11.5px] text-ink-faint">
+                      <span x-text="resultMeta()"></span>
+                      <button type="button" x-show="!mock && detail?.result.trace_id" @click="copyTrace()"
+                              class="font-mono transition hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/40 rounded"
+                              :title="'Copy PRISM trace id ' + (detail?.result.trace_id || '')"
+                              x-text="traceText()"></button>
+                    </div>
+                    <div x-show="detail?.result.run_status === 'failed'" class="border-t border-hairline bg-ochre-wash/60 px-5 py-2 text-[12px] font-medium text-ochre-ink">
+                      This run reported problems — check the steps above.
+                    </div>
+                  </section>
+                </template>
+
+                <!-- Findings -->
+                <template x-if="detail?.result && detail?.result.findings.length">
+                  <section class="space-y-3">
+                    <div class="flex items-baseline justify-between">
+                      <h3 class="text-[13px] font-medium">Findings</h3>
+                      <span class="font-mono text-[12.5px] tabular-nums text-ink-muted"
+                            x-text="detail?.result.findings.length === 1 ? '1 line' : detail?.result.findings.length + ' lines'"></span>
+                    </div>
+
+                    <template x-for="(f, idx) in detail?.result.findings" :key="f.type + f.sku + idx">
+                      <article class="rounded-panel border bg-surface shadow-panel transition hover:shadow-lift"
+                               :class="highlighted === f.clause_id && f.clause_id ? 'border-red-ink/40' : 'border-hairline'">
+                        <div class="px-5 pt-4">
+                          <div class="flex items-start justify-between gap-4">
+                            <div class="min-w-0">
+                              <span x-show="f.delta_usd !== 0"
+                                    class="inline-flex items-center gap-1.5 rounded-full border border-red-ink/25 bg-red-wash px-2 py-[3px] text-[11.5px] font-medium text-red-ink"
+                                    x-text="typeLabel(f.type)"></span>
+                              <span x-show="f.delta_usd === 0"
+                                    class="inline-flex items-center gap-1.5 rounded-full border border-hairline bg-paper px-2 py-[3px] text-[11.5px] font-medium text-ink-muted"
+                                    x-text="typeLabel(f.type)"></span>
+                              <div class="mt-2 font-mono text-[13px] font-medium" x-text="f.sku"></div>
+                            </div>
+                            <div class="shrink-0 text-right">
+                              <div class="font-mono text-[18px] font-medium tabular-nums"
+                                   :class="f.delta_usd > 0 ? 'text-red-ink' : 'text-ink-muted'"
+                                   x-text="f.delta_usd > 0 ? '+' + money(f.delta_usd) : money(f.delta_usd)"></div>
+                              <div class="mt-0.5 text-[11.5px] text-ink-faint"
+                                   x-text="f.delta_usd > 0 ? 'overbilled' : (f.type === 'UNKNOWN_SKU' ? 'unpriced' : 'under the threshold')"></div>
+                            </div>
+                          </div>
+
+                          <dl class="mt-3 grid grid-cols-2 gap-3 border-t border-hairline pt-3">
+                            <div>
+                              <dt class="text-[11.5px] text-ink-faint">Billed</dt>
+                              <dd class="font-mono text-[13.5px] tabular-nums text-ink-muted" x-text="money(f.billed_amount)"></dd>
+                            </div>
+                            <div>
+                              <dt class="text-[11.5px] text-ink-faint" x-text="f.type === 'UNKNOWN_SKU' ? 'Contract' : 'Contract allows'"></dt>
+                              <dd x-show="f.type !== 'UNKNOWN_SKU'" class="font-mono text-[13.5px] tabular-nums text-green-ink" x-text="money(f.expected_amount)"></dd>
+                              <dd x-show="f.type === 'UNKNOWN_SKU'" class="text-[13px] text-ink-muted">No price on file</dd>
+                            </div>
+                          </dl>
+
+                          <p x-show="f.explanation" class="mt-3 text-[13px] leading-relaxed" x-text="f.explanation"></p>
+                        </div>
+
+                        <div x-show="f.clause_id" class="px-5 pb-4 pt-1">
+                          <div class="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-hairline pt-3">
+                            <span class="font-mono text-[11.5px] font-medium text-ink-muted" x-text="'clause ' + f.clause_id"></span>
+                            <span class="text-[11.5px] text-ink-faint" x-text="clauseTitle(f.clause_id)"></span>
+                            <span x-show="f.citation_verified" class="inline-flex items-center gap-1.5 text-[11.5px] font-medium text-green-ink">
+                              <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
+                              Verified against the contract
+                            </span>
+                            <span x-show="!f.citation_verified" class="inline-flex items-center gap-1.5 text-[11.5px] font-medium text-ochre-ink">
+                              <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 8v5M12 16.5v.5"/><circle cx="12" cy="12" r="9"/></svg>
+                              Quote not found in contract
+                            </span>
+                            <button type="button" @click="clauseJump(f.clause_id)"
+                                    class="ml-auto rounded-control border border-hairline px-2.5 py-1 text-[11.5px] font-medium transition hover:bg-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/40"
+                                    x-text="'Show clause ' + f.clause_id"></button>
+                          </div>
+                          <blockquote x-show="f.clause_quote"
+                                      class="mt-2.5 border-l-2 border-red-ink/40 pl-3 text-[13px] leading-relaxed text-ink-muted"
+                                      x-text="'“' + f.clause_quote + '”'"></blockquote>
+                        </div>
+                      </article>
+                    </template>
+                  </section>
+                </template>
+
+                <!-- Contract -->
+                <section class="rounded-panel border border-hairline bg-surface shadow-panel">
+                  <div class="flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-hairline px-5 py-3">
+                    <h3 class="text-[13px] font-medium">Contract</h3>
+                    <span class="min-w-0 truncate text-[12.5px] text-ink-muted" x-text="contractMeta()"></span>
+                  </div>
+
+                  <div x-show="contractLoading" class="space-y-2.5 px-5 py-4">
+                    <div class="skel h-3.5 w-1/3 rounded"></div>
+                    <div class="skel h-3 w-full rounded"></div>
+                    <div class="skel h-3 w-11/12 rounded"></div>
+                    <div class="skel h-3 w-4/5 rounded"></div>
+                  </div>
+
+                  <div x-show="!contractLoading && contractError" class="px-5 py-4">
+                    <p class="text-[12.5px] text-ink-muted" x-text="contractError"></p>
+                    <button type="button" @click="loadContract(detail?.invoice)"
+                            class="mt-2.5 rounded-control border border-hairline px-2.5 py-1.5 text-[12px] font-medium transition hover:bg-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/40">
+                      Retry
+                    </button>
+                  </div>
+
+                  <template x-if="!contractLoading && contract">
+                    <div>
+                      <div x-show="citedClauses().length" class="flex flex-wrap items-center gap-2 px-5 pb-1 pt-3">
+                        <span class="text-[11.5px] text-ink-faint">Cited in this invoice</span>
+                        <template x-for="cid in citedClauses()" :key="cid">
+                          <button type="button" @click="clauseJump(cid)"
+                                  class="rounded-full border px-2.5 py-0.5 font-mono text-[11.5px] font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/40"
+                                  :class="highlighted === cid ? 'border-red-ink/40 bg-red-wash text-red-ink' : 'border-hairline text-ink-muted hover:bg-paper'"
+                                  x-text="cid"></button>
+                        </template>
+                      </div>
+                      <div x-ref="contractScroll" tabindex="0" role="region" aria-label="Contract clauses" class="scroll-thin relative max-h-[380px] overflow-y-auto px-5 pb-5 pt-3">
+                        <template x-for="c in contract.terms.clauses" :key="c.id">
+                          <div :id="'clause-' + c.id"
+                               class="clause mb-4 last:mb-0"
+                               :class="(highlighted === c.id ? 'hl ' : '') + (isCited(c.id) ? 'cited' : '')">
+                            <div class="flex items-baseline gap-2.5">
+                              <span class="font-mono text-[12px] font-medium text-ink-muted" x-text="c.id"></span>
+                              <span class="text-[13.5px] font-medium" x-text="c.title"></span>
+                            </div>
+                            <p class="mt-1 whitespace-pre-line text-[13px] leading-relaxed text-ink-muted" x-text="c.text"></p>
+                          </div>
+                        </template>
+                      </div>
+                    </div>
+                  </template>
+                </section>
+
+                <!-- Dispute email -->
+                <template x-if="detail?.result && detail?.result.dispute_email">
+                  <section class="rounded-panel border border-hairline bg-surface shadow-panel">
+                    <div class="flex items-center justify-between gap-3 border-b border-hairline px-5 py-3">
+                      <h3 class="text-[13px] font-medium">Dispute email</h3>
+                      <div class="flex items-center gap-2">
+                        <button type="button" @click="copyEmail()"
+                                class="rounded-control border border-hairline bg-surface px-2.5 py-1.5 text-[12px] font-medium transition hover:bg-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/40">
+                          <span x-text="emailCopied ? 'Copied' : 'Copy'"></span>
+                        </button>
+                        <a :href="mailtoHref()"
+                           class="rounded-control bg-ink px-2.5 py-1.5 text-[12px] font-medium text-white shadow-panel transition hover:bg-ink/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/40 focus-visible:ring-offset-2">
+                          Open in mail app
+                        </a>
+                      </div>
+                    </div>
+                    <div class="px-5 py-4">
+                      <div class="text-[11.5px] text-ink-faint">Subject</div>
+                      <div class="mt-0.5 text-[13.5px] font-medium" x-text="detail?.result.dispute_email.subject"></div>
+                      <div class="mt-3 whitespace-pre-wrap border-t border-hairline pt-3 text-[13.5px] leading-relaxed text-ink-muted"
+                           x-text="detail?.result.dispute_email.body"></div>
+                    </div>
+                  </section>
+                </template>
+
+                <template x-if="detail?.result && !detail?.result.dispute_email">
+                  <section class="rounded-panel border border-hairline bg-surface px-5 py-4 shadow-panel">
+                    <h3 class="text-[13px] font-medium">Dispute email</h3>
+                    <p class="mt-1 text-[12.5px] leading-relaxed text-ink-muted" x-text="noEmailReason()"></p>
+                  </section>
+                </template>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+    </section>
+  </main>
+
+  <!-- ── Footer ──────────────────────────────────────────────────────────── -->
+  <footer class="z-20 shrink-0 border-t border-hairline bg-surface px-4 py-2.5 sm:px-5">
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+      <span class="text-[12px] text-ink-muted">Synthetic data. Not legal or financial advice.</span>
+      <div class="ml-auto flex items-center gap-3">
+        <span x-show="mock" class="font-mono text-[11.5px] text-ink-faint">?mock=1</span>
+        <span class="text-[12px] text-ink-muted">Pipeline</span>
+        <div class="flex items-center rounded-control border border-hairline bg-paper p-0.5" role="group" aria-label="Pipeline version">
+          <template x-for="v in ['v1', 'v2']" :key="v">
+            <button type="button" @click="setVersion(v)" :aria-pressed="version === v"
+                    class="rounded-[6px] px-2.5 py-1 font-mono text-[11.5px] font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/40"
+                    :class="version === v ? 'bg-surface text-ink shadow-panel' : 'text-ink-muted hover:text-ink'"
+                    x-text="v"></button>
+          </template>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div aria-live="polite" class="pointer-events-none fixed bottom-5 right-5 z-50">
+    <div x-show="toastMsg" x-transition.opacity.duration.150ms
+         class="pointer-events-auto rounded-control bg-ink px-3.5 py-2.5 text-[12.5px] font-medium text-white shadow-lift"
+         x-text="toastMsg"></div>
+  </div>
+
+  <input x-ref="fileInput" type="file" accept=".pdf,.json,application/pdf,application/json" class="hidden" @change="onPick($event)">
+</div>
+</body>
+</html>

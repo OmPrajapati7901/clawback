@@ -1,0 +1,22 @@
+{
+  "invoice_no": "INV-1029",
+  "vendor_name_raw": "Kestrel Staffing Partners",
+  "invoice_date": "2026-04-22",
+  "line_items": [
+    {
+      "sku": "KS-400",
+      "description": "Permanent placement fee, accepted placement",
+      "qty": 2,
+      "unit_price": 2500.0,
+      "amount": 5000.0
+    },
+    {
+      "sku": "KS-100",
+      "description": "Contract analyst, per hour worked",
+      "qty": 320,
+      "unit_price": 78.0,
+      "amount": 24960.0
+    }
+  ],
+  "total": 29960.0
+}

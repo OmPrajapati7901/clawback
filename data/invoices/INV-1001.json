@@ -1,0 +1,29 @@
+{
+  "invoice_no": "INV-1001",
+  "vendor_name_raw": "Corvina Freight Systems LLC",
+  "invoice_date": "2026-07-10",
+  "line_items": [
+    {
+      "sku": "FR-200",
+      "description": "Expedited next-day delivery, committed window",
+      "qty": 2090,
+      "unit_price": 107.84,
+      "amount": 225385.6
+    },
+    {
+      "sku": "FR-100",
+      "description": "Palletized LTL freight, dry van, origin to destination",
+      "qty": 340,
+      "unit_price": 42.4,
+      "amount": 14416.0
+    },
+    {
+      "sku": "FR-400",
+      "description": "Cross-dock handling and palletization",
+      "qty": 850,
+      "unit_price": 12.8,
+      "amount": 10880.0
+    }
+  ],
+  "total": 250681.6
+}

@@ -1,0 +1,144 @@
+[
+  {
+    "step": "parse_invoice",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "parse_invoice",
+    "status": "ok",
+    "detail": "INV-1003: 3 lines, total $12,234.60",
+    "ms": 31,
+    "result": null
+  },
+  {
+    "step": "resolve_vendor",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "resolve_vendor",
+    "status": "ok",
+    "detail": "'Corvina Freight Systems LLC' \u2192 corvina_freight",
+    "ms": 1,
+    "result": null
+  },
+  {
+    "step": "load_contract_terms",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "load_contract_terms",
+    "status": "ok",
+    "detail": "corvina_freight: extracted terms, 18 clauses",
+    "ms": 46,
+    "result": null
+  },
+  {
+    "step": "compute_expected",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "compute_expected",
+    "status": "ok",
+    "detail": "3 lines priced, contract year 2",
+    "ms": 4,
+    "result": null
+  },
+  {
+    "step": "compare_lines",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "compare_lines",
+    "status": "ok",
+    "detail": "0 findings, delta $0.00",
+    "ms": 3,
+    "result": null
+  },
+  {
+    "step": "explain_findings",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "explain_findings",
+    "status": "ok",
+    "detail": "no findings",
+    "ms": 22,
+    "result": null
+  },
+  {
+    "step": "verify_citations",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "verify_citations",
+    "status": "ok",
+    "detail": "0/0 citations verified",
+    "ms": 2,
+    "result": null
+  },
+  {
+    "step": "decide_and_draft",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "decide_and_draft",
+    "status": "ok",
+    "detail": "APPROVE, total delta $0.00",
+    "ms": 9,
+    "result": null
+  },
+  {
+    "step": "grade",
+    "status": "running",
+    "detail": "",
+    "ms": 0,
+    "result": null
+  },
+  {
+    "step": "grade",
+    "status": "ok",
+    "detail": "matches label",
+    "ms": 2,
+    "result": null
+  },
+  {
+    "step": "result",
+    "status": "ok",
+    "detail": "APPROVE",
+    "ms": 0,
+    "result": {
+      "invoice_no": "INV-1003",
+      "version": "v1",
+      "decision": "APPROVE",
+      "findings": [],
+      "total_delta_usd": 0.0,
+      "dispute_email": null,
+      "run_status": "ok",
+      "trace_id": "f18dc84e-fdb6-4a95-9706-f5e549c07472"
+    }
+  }
+]

@@ -1,0 +1,592 @@
+{
+  "brightloom_facilities": {
+    "clauses": [
+      {
+        "id": "1.1",
+        "text": "This Master Services Agreement (this \"Agreement\") is made by and between Brightloom Facilities Services, an Illinois corporation (\"Contractor\"), and Harborline Industries, Inc., a Delaware corporation with its principal place of business in Cleveland, Ohio (\"Customer\"). Contractor and Customer are each a \"Party\" and together the \"Parties\". Contractor shall perform the services described in Section 2.1 through its own employees and subcontractors, and remains responsible for their performance.",
+        "title": "Parties and Roles"
+      },
+      {
+        "id": "1.2",
+        "text": "This Agreement takes effect on January 15, 2024 (the \"Effective Date\") and continues for a Term of three (3) years from that date (the \"Term\") unless terminated earlier under Section 9.1. On expiration of the initial Term the Agreement renews for successive twelve (12) month periods unless a Party gives written notice of non-renewal at least 60 days before the end of the then-current period. All amounts are stated in United States dollars.",
+        "title": "Effective Date and Term"
+      },
+      {
+        "id": "2.1",
+        "text": "Contractor shall provide janitorial, hard-floor care, landscaping and HVAC preventive maintenance services at the Customer facilities listed in Exhibit A. The only charges that may be invoiced under this Agreement are the rates and bands expressly identified in Section 3.2 and Section 4.1, and the pass-through amounts permitted by Section 3.3. No other charges, surcharges, administrative fees, minimum commitments or accessorials may be billed unless Customer authorizes them in writing before they are incurred.",
+        "title": "Services Provided"
+      },
+      {
+        "id": "2.2",
+        "text": "Contractor shall complete a quarterly quality inspection at each site and shall score at least eighty-five percent (85%) on the inspection checklist. A site that scores below that threshold is re-performed within five (5) business days at no additional charge. A service failure gives rise to the credits stated in this Section and does not create a right to increase any rate, to suspend service without notice, or to add a recovery surcharge of any kind.",
+        "title": "Service Standards and Remedies"
+      },
+      {
+        "id": "3.1",
+        "text": "Contractor shall invoice monthly in arrears. Each invoice must state a unique invoice number, the invoice date, the applicable purchase order number, and for every line item the SKU code, the description, the quantity, the unit price and the line amount. The quantity multiplied by the unit price must equal the line amount, and the invoice total must equal the sum of the line amounts. Customer pays undisputed amounts within 45 days of receipt of a correct invoice. An invoice that does not comply with this Section is returned for correction without affecting the Term.",
+        "title": "Invoicing and Payment"
+      },
+      {
+        "id": "3.2",
+        "text": "The rates below are the complete schedule of charges for the services described in Section 2.1, stated per unit of measure. A standard janitorial service visit (SKU BF-100) carries a rate of $185.00 per visit. HVAC preventive maintenance on a rooftop unit (SKU BF-200) carries a rate of $420.00 per rooftop unit serviced. A landscaping service visit (SKU BF-300) carries a rate of $140.00 per visit. An emergency maintenance callout (SKU BF-400) carries a rate of $250.00 per callout. Rates are exclusive of sales and use taxes, which Customer pays as required by law. No fuel, minimum, platform, administrative or convenience charge may be added to these rates.",
+        "title": "Rates and Charges"
+      },
+      {
+        "id": "3.3",
+        "text": "Customer-approved third-party costs are passed through at actual cost with no markup and must be identified on the invoice by the SKU to which they relate. A pass-through amount that is not pre-approved in writing is not payable. Contractor bears all costs of doing business under this Agreement, including its own insurance, licensing, equipment and supervision.",
+        "title": "Pass-Through Charges"
+      },
+      {
+        "id": "4.1",
+        "text": "Floor care (SKU BF-500) is billed by measured area in three bands. The first 19,999 square feet billed on a line carry a rate of $0.14 per square foot; every square foot from the 20,000th through the 74,999th on that line carries a rate of $0.11 per square foot; and every square foot from the 75,000th onward on that line carries a rate of $0.085 per square foot. Each square foot is billed in exactly one band, and the lower band rates do not apply to the whole quantity.",
+        "title": "Volume Bands and Quantity Pricing"
+      },
+      {
+        "id": "5.1",
+        "text": "Restroom consumables and paper products (SKU BF-900) are included in the janitorial rate for every site, and the monthly service report and inspection log (SKU BF-901) is included in the preventive maintenance and landscaping rates. Neither SKU may be billed separately, and a consumables charge may not be added as a percentage of the janitorial rate.",
+        "title": "Included Services"
+      },
+      {
+        "id": "5.2",
+        "text": "Contractor shall not bill separately for travel time, training, supervision, administrative overhead or any service described in Section 5.1. A charge for a service identified in Section 5.1 may not appear on an invoice with a positive amount, and a credit for such a charge may only be applied with Customer's written agreement.",
+        "title": "Charges Not Permitted"
+      },
+      {
+        "id": "6.1",
+        "text": "Each invoice must reference a Customer purchase order with the HL-BF- prefix, and Contractor shall not invoice against an expired or closed purchase order. Contractor shall also provide a quarterly business review covering volumes, service performance and any substitute products, substitutions or rate changes applied during the quarter.",
+        "title": "Purchase Orders and Reporting"
+      },
+      {
+        "id": "7.1",
+        "text": "Rates are stated per visit, per rooftop unit, per callout or per square foot as indicated in Section 3.2 and Section 4.1. An emergency callout outside business hours is billed at the rate in Section 3.2 with no travel-time, fuel or administrative additive.",
+        "title": "Adjustment Mechanism"
+      },
+      {
+        "id": "7.2",
+        "text": "Contractor may adjust the rates in Section 3.2 once per contract year by written notice given at least thirty (30) days before the anniversary of the Effective Date, subject to a ceiling of three percent (3.0%) of the rate in effect immediately before that anniversary, compounded annually over the Term. The floor-care band rates in Section 4.1 are not subject to any annual adjustment and remain fixed for the Term. A rate may not be raised more than once in any twelve (12) month period and may not be applied retroactively.",
+        "title": "Price Adjustments"
+      },
+      {
+        "id": "8.1",
+        "text": "Customer or its designee may audit Contractor's records supporting any invoice for 12 months after the invoice date. If an audit shows an overcharge, Contractor shall refund or credit the overcharged amount within thirty (30) days of the audit findings, together with interest at one percent (1%) per month from the invoice date. Contractor shall keep supporting records for the full audit period.",
+        "title": "Audit and Records"
+      },
+      {
+        "id": "8.2",
+        "text": "Customer may withhold a disputed amount and shall give written notice within 20 days of receiving the invoice. The Parties shall resolve the dispute in good faith within thirty (30) days of notice, and Contractor shall not suspend service or impose a late fee on a disputed amount while the dispute is pending. Amounts found to be overcharges are credited on the next invoice.",
+        "title": "Disputed Amounts"
+      },
+      {
+        "id": "9.1",
+        "text": "Either Party may terminate this Agreement for material breach on thirty (30) days' written notice if the breach is not cured within that period, or for convenience on 60 days' written notice. Termination does not affect Customer's right to recover overcharges identified under Section 8.1, and the rates in Section 3.2 continue to govern all services performed before the effective date of termination.",
+        "title": "Termination"
+      },
+      {
+        "id": "10.1",
+        "text": "This Agreement is governed by the laws of the State of Illinois, without regard to its conflict of laws rules. This Agreement, together with its Exhibits, is the entire agreement of the Parties on its subject matter and supersedes all prior proposals, quotes and rate sheets. No purchase order, invoice, portal term or click-through term modifies this Agreement, and any such term that conflicts with this Agreement is void.",
+        "title": "Governing Law and Entire Agreement"
+      },
+      {
+        "id": "10.2",
+        "text": "The Parties execute this Agreement as of the Effective Date. Harborline Industries, Inc., by its authorized officer, and Brightloom Facilities Services, by its authorized officer, have each signed below and delivered this Agreement electronically.\n\n| Customer | Contractor |\n| --- | --- |\n| Harborline Industries, Inc. | Brightloom Facilities Services |\n| Name: Dana Whitfield | Name: Priya Raghunathan |\n| Title: Director, Procurement Operations | Title: Vice President, Commercial |\n",
+        "title": "Execution"
+      }
+    ],
+    "effective_date": "2024-01-15",
+    "escalator_max_pct": 0.03,
+    "included_skus": [
+      "BF-900",
+      "BF-901"
+    ],
+    "rate_card": {
+      "BF-100": 185.0,
+      "BF-200": 420.0,
+      "BF-300": 140.0,
+      "BF-400": 250.0
+    },
+    "tier_type": "incremental",
+    "vendor_id": "brightloom_facilities",
+    "volume_tiers": {
+      "BF-500": [
+        {
+          "min_qty": 1,
+          "unit_price": 0.14
+        },
+        {
+          "min_qty": 20000,
+          "unit_price": 0.11
+        },
+        {
+          "min_qty": 75000,
+          "unit_price": 0.085
+        }
+      ]
+    }
+  },
+  "corvina_freight": {
+    "clauses": [
+      {
+        "id": "1.1",
+        "text": "This Master Services Agreement (this \"Agreement\") is made by and between Corvina Freight Systems LLC, an Ohio limited liability company (\"Carrier\"), and Harborline Industries, Inc., a Delaware corporation with its principal place of business in Cleveland, Ohio (\"Customer\"). Carrier and Customer are each a \"Party\" and together the \"Parties\". Carrier shall perform the services described in Section 2.1 through its own employees and subcontractors, and remains responsible for their performance.",
+        "title": "Parties and Roles"
+      },
+      {
+        "id": "1.2",
+        "text": "This Agreement takes effect on June 1, 2024 (the \"Effective Date\") and continues for a Term of three (3) years from that date (the \"Term\") unless terminated earlier under Section 9.1. On expiration of the initial Term the Agreement renews for successive twelve (12) month periods unless a Party gives written notice of non-renewal at least 60 days before the end of the then-current period. All amounts are stated in United States dollars.",
+        "title": "Effective Date and Term"
+      },
+      {
+        "id": "2.1",
+        "text": "Carrier shall provide less-than-truckload transportation, expedited delivery and container drayage services to the Customer distribution centers listed in Exhibit A. The only charges that may be invoiced under this Agreement are the rates and bands expressly identified in Section 3.2 and Section 4.1, and the pass-through amounts permitted by Section 3.3. No other charges, surcharges, administrative fees, minimum commitments or accessorials may be billed unless Customer authorizes them in writing before they are incurred.",
+        "title": "Services Provided"
+      },
+      {
+        "id": "2.2",
+        "text": "Carrier shall pick up and deliver at least ninety-six percent (96%) of scheduled stops inside the committed window. A missed window that is not caused by weather, Customer delay or a documented road closure earns a service credit equal to the line charge for the affected shipment. A service failure gives rise to the credits stated in this Section and does not create a right to increase any rate, to suspend service without notice, or to add a recovery surcharge of any kind.",
+        "title": "Service Standards and Remedies"
+      },
+      {
+        "id": "3.1",
+        "text": "Carrier shall invoice monthly in arrears. Each invoice must state a unique invoice number, the invoice date, the applicable purchase order number, and for every line item the SKU code, the description, the quantity, the unit price and the line amount. The quantity multiplied by the unit price must equal the line amount, and the invoice total must equal the sum of the line amounts. Customer pays undisputed amounts within 30 days of receipt of a correct invoice. An invoice that does not comply with this Section is returned for correction without affecting the Term.",
+        "title": "Invoicing and Payment"
+      },
+      {
+        "id": "3.2",
+        "text": "The rates below are the complete schedule of charges for the services described in Section 2.1, stated per unit of measure. Palletized less-than-truckload freight (SKU FR-100) is billed at $42.40 per pallet. Expedited next-day delivery (SKU FR-200) is billed at $96.00 per shipment. Container drayage (SKU FR-300) is billed at $185.00 per container. Cross-dock handling and palletization (SKU FR-400) is billed at $12.80 per pallet handled. Rates are exclusive of sales and use taxes, which Customer pays as required by law. No fuel, minimum, platform, administrative or convenience charge may be added to these rates.",
+        "title": "Rates and Charges"
+      },
+      {
+        "id": "3.3",
+        "text": "Customer-approved third-party costs are passed through at actual cost with no markup and must be identified on the invoice by the SKU to which they relate. A pass-through amount that is not pre-approved in writing is not payable. Carrier bears all costs of doing business under this Agreement, including its own insurance, licensing, equipment and supervision.",
+        "title": "Pass-Through Charges"
+      },
+      {
+        "id": "4.1",
+        "text": "The rates in Section 3.2 are flat rates. This Agreement contains no volume-based rate bands, tiered pricing, minimum quantity commitment or rebate mechanism, and the number of pallets, shipments or containers dispatched in any month does not change a unit rate.",
+        "title": "No Volume Bands"
+      },
+      {
+        "id": "5.1",
+        "text": "The following services are included in the rates set out in Section 3.2 and must not be billed separately: monthly logistics performance reporting (SKU FR-900), which covers tracking, on-time performance and exception reporting; and fuel surcharge administration (SKU FR-901), which covers the calculation, audit and application of the fuel index used under this Agreement. Carrier's fuel cost recovery is fully expressed in the rates in Section 3.2.",
+        "title": "Included Services"
+      },
+      {
+        "id": "5.2",
+        "text": "Carrier shall not bill separately for travel time, training, supervision, administrative overhead or any service described in Section 5.1. A charge for a service identified in Section 5.1 may not appear on an invoice with a positive amount, and a credit for such a charge may only be applied with Customer's written agreement.",
+        "title": "Charges Not Permitted"
+      },
+      {
+        "id": "6.1",
+        "text": "Each invoice must reference a Customer purchase order with the HL-FR- prefix, and Carrier shall not invoice against an expired or closed purchase order. Carrier shall also provide a quarterly business review covering volumes, service performance and any substitute products, substitutions or rate changes applied during the quarter.",
+        "title": "Purchase Orders and Reporting"
+      },
+      {
+        "id": "7.1",
+        "text": "The rates in Section 3.2 change only as provided in Section 7.2. Any other change, including a change driven by fuel indices, equipment availability, lane distance or accessorial practice, requires a written amendment signed by both Parties and takes effect only for shipments dispatched after the amendment date.",
+        "title": "Adjustment Mechanism"
+      },
+      {
+        "id": "7.2",
+        "text": "On each anniversary of the Effective Date, Carrier may adjust the unit rates set out in Section 3.2 by no more than five percent (5.0%) of the rate in effect immediately before that anniversary, compounded annually over the Term. An adjustment takes effect only on the anniversary on which it is applied and may not be applied retroactively to any shipment dispatched before that date. A rate increase above the five percent (5.0%) ceiling in any contract year is not chargeable, and Customer may treat any invoice line that applies such an increase as an overcharge.",
+        "title": "Price Adjustments"
+      },
+      {
+        "id": "8.1",
+        "text": "Customer or its designee may audit Carrier's records supporting any invoice for 12 months after the invoice date. If an audit shows an overcharge, Carrier shall refund or credit the overcharged amount within thirty (30) days of the audit findings, together with interest at one percent (1%) per month from the invoice date. Carrier shall keep supporting records for the full audit period.",
+        "title": "Audit and Records"
+      },
+      {
+        "id": "8.2",
+        "text": "Customer may withhold a disputed amount and shall give written notice within 15 days of receiving the invoice. The Parties shall resolve the dispute in good faith within thirty (30) days of notice, and Carrier shall not suspend service or impose a late fee on a disputed amount while the dispute is pending. Amounts found to be overcharges are credited on the next invoice.",
+        "title": "Disputed Amounts"
+      },
+      {
+        "id": "9.1",
+        "text": "Either Party may terminate this Agreement for material breach on thirty (30) days' written notice if the breach is not cured within that period, or for convenience on 60 days' written notice. Termination does not affect Customer's right to recover overcharges identified under Section 8.1, and the rates in Section 3.2 continue to govern all services performed before the effective date of termination.",
+        "title": "Termination"
+      },
+      {
+        "id": "10.1",
+        "text": "This Agreement is governed by the laws of the State of Ohio, without regard to its conflict of laws rules. This Agreement, together with its Exhibits, is the entire agreement of the Parties on its subject matter and supersedes all prior proposals, quotes and rate sheets. No purchase order, invoice, portal term or click-through term modifies this Agreement, and any such term that conflicts with this Agreement is void.",
+        "title": "Governing Law and Entire Agreement"
+      },
+      {
+        "id": "10.2",
+        "text": "The Parties execute this Agreement as of the Effective Date. Harborline Industries, Inc., by its authorized officer, and Corvina Freight Systems LLC, by its authorized officer, have each signed below and delivered this Agreement electronically.\n\n| Customer | Carrier |\n| --- | --- |\n| Harborline Industries, Inc. | Corvina Freight Systems LLC |\n| Name: Dana Whitfield | Name: Priya Raghunathan |\n| Title: Director, Procurement Operations | Title: Vice President, Commercial |\n",
+        "title": "Execution"
+      }
+    ],
+    "effective_date": "2024-06-01",
+    "escalator_max_pct": 0.05,
+    "included_skus": [
+      "FR-900",
+      "FR-901"
+    ],
+    "rate_card": {
+      "FR-100": 42.4,
+      "FR-200": 96.0,
+      "FR-300": 185.0,
+      "FR-400": 12.8
+    },
+    "tier_type": "incremental",
+    "vendor_id": "corvina_freight",
+    "volume_tiers": {}
+  },
+  "heliotrope_cloud": {
+    "clauses": [
+      {
+        "id": "1.1",
+        "text": "This Master Services Agreement (this \"Agreement\") is made by and between Heliotrope Cloud Hosting, Inc., a Delaware corporation (\"Provider\"), and Harborline Industries, Inc., a Delaware corporation with its principal place of business in Cleveland, Ohio (\"Customer\"). Provider and Customer are each a \"Party\" and together the \"Parties\". Provider shall perform the services described in Section 2.1 through its own employees and subcontractors, and remains responsible for their performance.",
+        "title": "Parties and Roles"
+      },
+      {
+        "id": "1.2",
+        "text": "This Agreement takes effect on February 1, 2025 (the \"Effective Date\") and continues for a Term of three (3) years from that date (the \"Term\") unless terminated earlier under Section 9.1. On expiration of the initial Term the Agreement renews for successive twelve (12) month periods unless a Party gives written notice of non-renewal at least 90 days before the end of the then-current period. All amounts are stated in United States dollars.",
+        "title": "Effective Date and Term"
+      },
+      {
+        "id": "2.1",
+        "text": "Provider shall provide managed cloud hosting, compute instances, object storage, managed PostgreSQL and bandwidth services delivered from the region Customer selects in the service console. The only charges that may be invoiced under this Agreement are the rates and bands expressly identified in Section 3.2 and Section 4.1, and the pass-through amounts permitted by Section 3.3. No other charges, surcharges, administrative fees, minimum commitments or accessorials may be billed unless Customer authorizes them in writing before they are incurred.",
+        "title": "Services Provided"
+      },
+      {
+        "id": "2.2",
+        "text": "Provider shall make compute and managed database services available at least ninety-nine and ninety-five hundredths percent (99.95%) of the time in each calendar month. Availability shortfalls earn service credits as set out in Exhibit C, and those credits are the sole remedy for an availability shortfall. A service failure gives rise to the credits stated in this Section and does not create a right to increase any rate, to suspend service without notice, or to add a recovery surcharge of any kind.",
+        "title": "Service Standards and Remedies"
+      },
+      {
+        "id": "3.1",
+        "text": "Provider shall invoice monthly in arrears. Each invoice must state a unique invoice number, the invoice date, the applicable purchase order number, and for every line item the SKU code, the description, the quantity, the unit price and the line amount. The quantity multiplied by the unit price must equal the line amount, and the invoice total must equal the sum of the line amounts. Customer pays undisputed amounts within 30 days of receipt of a correct invoice. An invoice that does not comply with this Section is returned for correction without affecting the Term.",
+        "title": "Invoicing and Payment"
+      },
+      {
+        "id": "3.2",
+        "text": "The rates below are the complete schedule of charges for the services described in Section 2.1, stated per unit of measure. A standard compute instance (SKU HC-100) is charged at $0.42 per instance-hour. A managed PostgreSQL instance (SKU HC-300) is charged at $310.00 per instance-month. Bandwidth overage beyond the committed allowance (SKU HC-400) is charged at $0.09 per GB of overage. Snapshot storage retention (SKU HC-500) is charged at $0.05 per GB-month. Rates are exclusive of sales and use taxes, which Customer pays as required by law. No fuel, minimum, platform, administrative or convenience charge may be added to these rates.",
+        "title": "Rates and Charges"
+      },
+      {
+        "id": "3.3",
+        "text": "Customer-approved third-party costs are passed through at actual cost with no markup and must be identified on the invoice by the SKU to which they relate. A pass-through amount that is not pre-approved in writing is not payable. Provider bears all costs of doing business under this Agreement, including its own insurance, licensing, equipment and supervision.",
+        "title": "Pass-Through Charges"
+      },
+      {
+        "id": "4.1",
+        "text": "Charges for object storage (SKU HC-200) are calculated incrementally rather than on the whole quantity. The first 49,999 GB-months billed on a line are charged at $0.02 per GB-month, and the reduced rate of $0.015 per GB-month applies only to units in excess of the first 49,999 GB-months on that line. A further reduction to $0.01 per GB-month applies to units in excess of the first 249,999 GB-months on the same line. A line may not be split, combined or re-billed to move units between bands, and quantities on separate lines are not aggregated for the purpose of reaching a band.",
+        "title": "Volume Bands and Quantity Pricing"
+      },
+      {
+        "id": "5.1",
+        "text": "Standard support during business hours (SKU HC-900) and monthly usage and billing reporting (SKU HC-901) are included in the rates in Section 3.2 and in the storage charges in Section 4.1. Neither may be billed as a separate line item, and neither may be added as a percentage surcharge on platform charges.",
+        "title": "Included Services"
+      },
+      {
+        "id": "5.2",
+        "text": "Provider shall not bill separately for travel time, training, supervision, administrative overhead or any service described in Section 5.1. A charge for a service identified in Section 5.1 may not appear on an invoice with a positive amount, and a credit for such a charge may only be applied with Customer's written agreement.",
+        "title": "Charges Not Permitted"
+      },
+      {
+        "id": "6.1",
+        "text": "Each invoice must reference a Customer purchase order with the HL-HC- prefix, and Provider shall not invoice against an expired or closed purchase order. Provider shall also provide a quarterly business review covering volumes, service performance and any substitute products, substitutions or rate changes applied during the quarter.",
+        "title": "Purchase Orders and Reporting"
+      },
+      {
+        "id": "7.1",
+        "text": "Provider may change platform architecture, instance families or storage media at any time provided that the rates in Section 3.2 and the bands in Section 4.1 are not increased. Service credits under Section 2.2 and taxes are the only amounts that may appear on an invoice in addition to the charges calculated from Section 3.2 and Section 4.1.",
+        "title": "Adjustment Mechanism"
+      },
+      {
+        "id": "7.2",
+        "text": "The rates in Section 3.2 and the storage bands in Section 4.1 are firm and fixed for the entire Term. Provider shall not increase any rate, remove any band discount or introduce a platform fee, minimum commitment or index adjustment during the Term. A unit price on an invoice that exceeds the rate stated in Section 3.2 is incorrect and is not payable as billed.",
+        "title": "Price Adjustments"
+      },
+      {
+        "id": "8.1",
+        "text": "Customer or its designee may audit Provider's records supporting any invoice for 24 months after the invoice date. If an audit shows an overcharge, Provider shall refund or credit the overcharged amount within thirty (30) days of the audit findings, together with interest at one percent (1%) per month from the invoice date. Provider shall keep supporting records for the full audit period.",
+        "title": "Audit and Records"
+      },
+      {
+        "id": "8.2",
+        "text": "Customer may withhold a disputed amount and shall give written notice within 30 days of receiving the invoice. The Parties shall resolve the dispute in good faith within thirty (30) days of notice, and Provider shall not suspend service or impose a late fee on a disputed amount while the dispute is pending. Amounts found to be overcharges are credited on the next invoice.",
+        "title": "Disputed Amounts"
+      },
+      {
+        "id": "9.1",
+        "text": "Either Party may terminate this Agreement for material breach on thirty (30) days' written notice if the breach is not cured within that period, or for convenience on 90 days' written notice. Termination does not affect Customer's right to recover overcharges identified under Section 8.1, and the rates in Section 3.2 continue to govern all services performed before the effective date of termination.",
+        "title": "Termination"
+      },
+      {
+        "id": "10.1",
+        "text": "This Agreement is governed by the laws of the State of Delaware, without regard to its conflict of laws rules. This Agreement, together with its Exhibits, is the entire agreement of the Parties on its subject matter and supersedes all prior proposals, quotes and rate sheets. No purchase order, invoice, portal term or click-through term modifies this Agreement, and any such term that conflicts with this Agreement is void.",
+        "title": "Governing Law and Entire Agreement"
+      },
+      {
+        "id": "10.2",
+        "text": "The Parties execute this Agreement as of the Effective Date. Harborline Industries, Inc., by its authorized officer, and Heliotrope Cloud Hosting, Inc., by its authorized officer, have each signed below and delivered this Agreement electronically.\n\n| Customer | Provider |\n| --- | --- |\n| Harborline Industries, Inc. | Heliotrope Cloud Hosting, Inc. |\n| Name: Dana Whitfield | Name: Priya Raghunathan |\n| Title: Director, Procurement Operations | Title: Vice President, Commercial |\n",
+        "title": "Execution"
+      }
+    ],
+    "effective_date": "2025-02-01",
+    "escalator_max_pct": null,
+    "included_skus": [
+      "HC-900",
+      "HC-901"
+    ],
+    "rate_card": {
+      "HC-100": 0.42,
+      "HC-300": 310.0,
+      "HC-400": 0.09,
+      "HC-500": 0.05
+    },
+    "tier_type": "incremental",
+    "vendor_id": "heliotrope_cloud",
+    "volume_tiers": {
+      "HC-200": [
+        {
+          "min_qty": 1,
+          "unit_price": 0.02
+        },
+        {
+          "min_qty": 50000,
+          "unit_price": 0.015
+        },
+        {
+          "min_qty": 250000,
+          "unit_price": 0.01
+        }
+      ]
+    }
+  },
+  "kestrel_staffing": {
+    "clauses": [
+      {
+        "id": "1.1",
+        "text": "This Master Services Agreement (this \"Agreement\") is made by and between Kestrel Staffing Partners, a Texas limited liability company (\"Staffing Provider\"), and Harborline Industries, Inc., a Delaware corporation with its principal place of business in Cleveland, Ohio (\"Customer\"). Staffing Provider and Customer are each a \"Party\" and together the \"Parties\". Staffing Provider shall perform the services described in Section 2.1 through its own employees and subcontractors, and remains responsible for their performance.",
+        "title": "Parties and Roles"
+      },
+      {
+        "id": "1.2",
+        "text": "This Agreement takes effect on August 1, 2023 (the \"Effective Date\") and continues for a Term of three (3) years from that date (the \"Term\") unless terminated earlier under Section 9.1. On expiration of the initial Term the Agreement renews for successive twelve (12) month periods unless a Party gives written notice of non-renewal at least 60 days before the end of the then-current period. All amounts are stated in United States dollars.",
+        "title": "Effective Date and Term"
+      },
+      {
+        "id": "2.1",
+        "text": "Staffing Provider shall provide contract staffing services for the analyst, engineering and administrative roles catalogued in Exhibit B, including recruiting, screening and assignment administration. The only charges that may be invoiced under this Agreement are the rates and bands expressly identified in Section 3.2 and Section 4.1, and the pass-through amounts permitted by Section 3.3. No other charges, surcharges, administrative fees, minimum commitments or accessorials may be billed unless Customer authorizes them in writing before they are incurred.",
+        "title": "Services Provided"
+      },
+      {
+        "id": "2.2",
+        "text": "Staffing Provider shall replace an assigned worker who does not meet the assignment requirements within three (3) business days at no additional charge, and shall reconcile approved timesheets weekly rather than at invoice time. A service failure gives rise to the credits stated in this Section and does not create a right to increase any rate, to suspend service without notice, or to add a recovery surcharge of any kind.",
+        "title": "Service Standards and Remedies"
+      },
+      {
+        "id": "3.1",
+        "text": "Staffing Provider shall invoice monthly in arrears. Each invoice must state a unique invoice number, the invoice date, the applicable purchase order number, and for every line item the SKU code, the description, the quantity, the unit price and the line amount. The quantity multiplied by the unit price must equal the line amount, and the invoice total must equal the sum of the line amounts. Customer pays undisputed amounts within 30 days of receipt of a correct invoice. An invoice that does not comply with this Section is returned for correction without affecting the Term.",
+        "title": "Invoicing and Payment"
+      },
+      {
+        "id": "3.2",
+        "text": "The rates below are the complete schedule of charges for the services described in Section 2.1, stated per unit of measure. A contract analyst (SKU KS-100) is invoiced at $78.00 per hour worked. A senior engineer (SKU KS-200) is invoiced at $145.00 per hour worked. A data entry clerk (SKU KS-300) is invoiced at $42.00 per hour worked. A permanent placement fee (SKU KS-400) is invoiced at $2,500.00 per accepted placement. Rates are exclusive of sales and use taxes, which Customer pays as required by law. No fuel, minimum, platform, administrative or convenience charge may be added to these rates.",
+        "title": "Rates and Charges"
+      },
+      {
+        "id": "3.3",
+        "text": "Customer-approved third-party costs are passed through at actual cost with no markup and must be identified on the invoice by the SKU to which they relate. A pass-through amount that is not pre-approved in writing is not payable. Staffing Provider bears all costs of doing business under this Agreement, including its own insurance, licensing, equipment and supervision.",
+        "title": "Pass-Through Charges"
+      },
+      {
+        "id": "4.1",
+        "text": "This Agreement contains no volume rate bands or tiered discounts. Hours are billed at the hourly rates in Section 3.2 regardless of the number of hours invoiced in a month, and no blended rate, overtime multiplier or volume discount applies.",
+        "title": "No Volume Bands"
+      },
+      {
+        "id": "5.1",
+        "text": "Timesheet administration and approval (SKU KS-900) and the monthly utilization and compliance report (SKU KS-901) are included in the hourly rates in Section 3.2. Neither may be billed separately, and the placement fee covers all recruiting, screening, onboarding and background-check administration.",
+        "title": "Included Services"
+      },
+      {
+        "id": "5.2",
+        "text": "Staffing Provider shall not bill separately for travel time, training, supervision, administrative overhead or any service described in Section 5.1. A charge for a service identified in Section 5.1 may not appear on an invoice with a positive amount, and a credit for such a charge may only be applied with Customer's written agreement.",
+        "title": "Charges Not Permitted"
+      },
+      {
+        "id": "6.1",
+        "text": "Each invoice must reference a Customer purchase order with the HL-KS- prefix, and Staffing Provider shall not invoice against an expired or closed purchase order. Staffing Provider shall also provide a quarterly business review covering volumes, service performance and any substitute products, substitutions or rate changes applied during the quarter.",
+        "title": "Purchase Orders and Reporting"
+      },
+      {
+        "id": "7.1",
+        "text": "Rates are stated per hour worked. Staffing Provider shall not bill for orientation, training, equipment, benefits administration or travel time, and shall not invoice hours beyond the timesheets Customer approved for the period invoiced.",
+        "title": "Adjustment Mechanism"
+      },
+      {
+        "id": "7.2",
+        "text": "Staffing Provider may adjust the hourly rates in Section 3.2 on each anniversary of the Effective Date by no more than four percent (4.0%) of the rate in effect immediately before that anniversary, compounding annually over the Term. An adjustment may not be applied before the anniversary on which it takes effect and may not be applied to hours worked in an earlier period. The placement fee in Section 3.2 is fixed for the Term.",
+        "title": "Price Adjustments"
+      },
+      {
+        "id": "8.1",
+        "text": "Customer or its designee may audit Staffing Provider's records supporting any invoice for 24 months after the invoice date. If an audit shows an overcharge, Staffing Provider shall refund or credit the overcharged amount within thirty (30) days of the audit findings, together with interest at one percent (1%) per month from the invoice date. Staffing Provider shall keep supporting records for the full audit period.",
+        "title": "Audit and Records"
+      },
+      {
+        "id": "8.2",
+        "text": "Customer may withhold a disputed amount and shall give written notice within 20 days of receiving the invoice. The Parties shall resolve the dispute in good faith within thirty (30) days of notice, and Staffing Provider shall not suspend service or impose a late fee on a disputed amount while the dispute is pending. Amounts found to be overcharges are credited on the next invoice.",
+        "title": "Disputed Amounts"
+      },
+      {
+        "id": "9.1",
+        "text": "Either Party may terminate this Agreement for material breach on thirty (30) days' written notice if the breach is not cured within that period, or for convenience on 60 days' written notice. Termination does not affect Customer's right to recover overcharges identified under Section 8.1, and the rates in Section 3.2 continue to govern all services performed before the effective date of termination.",
+        "title": "Termination"
+      },
+      {
+        "id": "10.1",
+        "text": "This Agreement is governed by the laws of the State of Texas, without regard to its conflict of laws rules. This Agreement, together with its Exhibits, is the entire agreement of the Parties on its subject matter and supersedes all prior proposals, quotes and rate sheets. No purchase order, invoice, portal term or click-through term modifies this Agreement, and any such term that conflicts with this Agreement is void.",
+        "title": "Governing Law and Entire Agreement"
+      },
+      {
+        "id": "10.2",
+        "text": "The Parties execute this Agreement as of the Effective Date. Harborline Industries, Inc., by its authorized officer, and Kestrel Staffing Partners, by its authorized officer, have each signed below and delivered this Agreement electronically.\n\n| Customer | Staffing Provider |\n| --- | --- |\n| Harborline Industries, Inc. | Kestrel Staffing Partners |\n| Name: Dana Whitfield | Name: Priya Raghunathan |\n| Title: Director, Procurement Operations | Title: Vice President, Commercial |\n",
+        "title": "Execution"
+      }
+    ],
+    "effective_date": "2023-08-01",
+    "escalator_max_pct": 0.04,
+    "included_skus": [
+      "KS-900",
+      "KS-901"
+    ],
+    "rate_card": {
+      "KS-100": 78.0,
+      "KS-200": 145.0,
+      "KS-300": 42.0,
+      "KS-400": 2500.0
+    },
+    "tier_type": "incremental",
+    "vendor_id": "kestrel_staffing",
+    "volume_tiers": {}
+  },
+  "pinecrest_supply": {
+    "clauses": [
+      {
+        "id": "1.1",
+        "text": "This Master Services Agreement (this \"Agreement\") is made by and between Pinecrest Office Supply Company, an Oregon corporation (\"Supplier\"), and Harborline Industries, Inc., a Delaware corporation with its principal place of business in Cleveland, Ohio (\"Customer\"). Supplier and Customer are each a \"Party\" and together the \"Parties\". Supplier shall perform the services described in Section 2.1 through its own employees and subcontractors, and remains responsible for their performance.",
+        "title": "Parties and Roles"
+      },
+      {
+        "id": "1.2",
+        "text": "This Agreement takes effect on September 1, 2024 (the \"Effective Date\") and continues for a Term of three (3) years from that date (the \"Term\") unless terminated earlier under Section 9.1. On expiration of the initial Term the Agreement renews for successive twelve (12) month periods unless a Party gives written notice of non-renewal at least 30 days before the end of the then-current period. All amounts are stated in United States dollars.",
+        "title": "Effective Date and Term"
+      },
+      {
+        "id": "2.1",
+        "text": "Supplier shall provide office supplies, breakroom products, paper and furniture delivered to the Customer ordering locations listed in Exhibit A. The only charges that may be invoiced under this Agreement are the rates and bands expressly identified in Section 3.2 and Section 4.1, and the pass-through amounts permitted by Section 3.3. No other charges, surcharges, administrative fees, minimum commitments or accessorials may be billed unless Customer authorizes them in writing before they are incurred.",
+        "title": "Services Provided"
+      },
+      {
+        "id": "2.2",
+        "text": "Supplier shall deliver stocked items by the next business day for orders released before 3:00 p.m. local time and shall maintain a fill rate of at least ninety-eight percent (98%) measured monthly. Backordered lines are reported to Customer within one business day. A service failure gives rise to the credits stated in this Section and does not create a right to increase any rate, to suspend service without notice, or to add a recovery surcharge of any kind.",
+        "title": "Service Standards and Remedies"
+      },
+      {
+        "id": "3.1",
+        "text": "Supplier shall invoice monthly in arrears. Each invoice must state a unique invoice number, the invoice date, the applicable purchase order number, and for every line item the SKU code, the description, the quantity, the unit price and the line amount. The quantity multiplied by the unit price must equal the line amount, and the invoice total must equal the sum of the line amounts. Customer pays undisputed amounts within 30 days of receipt of a correct invoice. An invoice that does not comply with this Section is returned for correction without affecting the Term.",
+        "title": "Invoicing and Payment"
+      },
+      {
+        "id": "3.2",
+        "text": "The rates below are the complete schedule of charges for the services described in Section 2.1, stated per unit of measure. A high-yield black toner cartridge (SKU PS-200) is priced at $92.50 per cartridge. A breakroom supply box (SKU PS-300) is priced at $46.75 per box. An ergonomic task chair (SKU PS-400) is priced at $215.00 per chair. A two-drawer filing cabinet (SKU PS-500) is priced at $168.00 per cabinet. Rates are exclusive of sales and use taxes, which Customer pays as required by law. No fuel, minimum, platform, administrative or convenience charge may be added to these rates.",
+        "title": "Rates and Charges"
+      },
+      {
+        "id": "3.3",
+        "text": "Customer-approved third-party costs are passed through at actual cost with no markup and must be identified on the invoice by the SKU to which they relate. A pass-through amount that is not pre-approved in writing is not payable. Supplier bears all costs of doing business under this Agreement, including its own insurance, licensing, equipment and supervision.",
+        "title": "Pass-Through Charges"
+      },
+      {
+        "id": "4.1",
+        "text": "Copy paper (SKU PS-100) is priced at $38.40 per case before volume discounts and is billed on a whole-line basis. When the quantity billed on a single invoice line reaches fifty (50) cases, the rate of $34.25 per case applies to every case on that line, and when the quantity billed on that line reaches two hundred (200) cases, the rate of $29.90 per case applies to every case on that line. Discounts that apply only to cases above a threshold are not offered under this Agreement, and the whole-line rate is determined by the quantity actually invoiced on the line.",
+        "title": "Volume Bands and Quantity Pricing"
+      },
+      {
+        "id": "5.1",
+        "text": "Standard delivery and inside placement (SKU PS-900) and the monthly spend and usage report (SKU PS-901) are included in the rates in Section 3.2 and in the case rates in Section 4.1. No delivery, handling, fuel, small-order or reporting fee may be added to an invoice.",
+        "title": "Included Services"
+      },
+      {
+        "id": "5.2",
+        "text": "Supplier shall not bill separately for travel time, training, supervision, administrative overhead or any service described in Section 5.1. A charge for a service identified in Section 5.1 may not appear on an invoice with a positive amount, and a credit for such a charge may only be applied with Customer's written agreement.",
+        "title": "Charges Not Permitted"
+      },
+      {
+        "id": "6.1",
+        "text": "Each invoice must reference a Customer purchase order with the HL-PS- prefix, and Supplier shall not invoice against an expired or closed purchase order. Supplier shall also provide a quarterly business review covering volumes, service performance and any substitute products, substitutions or rate changes applied during the quarter.",
+        "title": "Purchase Orders and Reporting"
+      },
+      {
+        "id": "7.1",
+        "text": "Supplier may substitute an equivalent product for a discontinued item without changing the SKU or the rate, provided the substitute is of equal or better specification and the substitution is disclosed on the next monthly report.",
+        "title": "Adjustment Mechanism"
+      },
+      {
+        "id": "7.2",
+        "text": "The rates in Section 3.2 and the case rates in Section 4.1 are firm and fixed for the entire Term. Supplier shall not increase any price during the Term, and an invoice line that states a price above the applicable rate is incorrect, is not payable as billed and may be deducted by Customer from the amount payable. Delivery surcharges, small-order fees and index adjustments are not permitted.",
+        "title": "Price Adjustments"
+      },
+      {
+        "id": "8.1",
+        "text": "Customer or its designee may audit Supplier's records supporting any invoice for 12 months after the invoice date. If an audit shows an overcharge, Supplier shall refund or credit the overcharged amount within thirty (30) days of the audit findings, together with interest at one percent (1%) per month from the invoice date. Supplier shall keep supporting records for the full audit period.",
+        "title": "Audit and Records"
+      },
+      {
+        "id": "8.2",
+        "text": "Customer may withhold a disputed amount and shall give written notice within 15 days of receiving the invoice. The Parties shall resolve the dispute in good faith within thirty (30) days of notice, and Supplier shall not suspend service or impose a late fee on a disputed amount while the dispute is pending. Amounts found to be overcharges are credited on the next invoice.",
+        "title": "Disputed Amounts"
+      },
+      {
+        "id": "9.1",
+        "text": "Either Party may terminate this Agreement for material breach on thirty (30) days' written notice if the breach is not cured within that period, or for convenience on 30 days' written notice. Termination does not affect Customer's right to recover overcharges identified under Section 8.1, and the rates in Section 3.2 continue to govern all services performed before the effective date of termination.",
+        "title": "Termination"
+      },
+      {
+        "id": "10.1",
+        "text": "This Agreement is governed by the laws of the State of Oregon, without regard to its conflict of laws rules. This Agreement, together with its Exhibits, is the entire agreement of the Parties on its subject matter and supersedes all prior proposals, quotes and rate sheets. No purchase order, invoice, portal term or click-through term modifies this Agreement, and any such term that conflicts with this Agreement is void.",
+        "title": "Governing Law and Entire Agreement"
+      },
+      {
+        "id": "10.2",
+        "text": "The Parties execute this Agreement as of the Effective Date. Harborline Industries, Inc., by its authorized officer, and Pinecrest Office Supply Company, by its authorized officer, have each signed below and delivered this Agreement electronically.\n\n| Customer | Supplier |\n| --- | --- |\n| Harborline Industries, Inc. | Pinecrest Office Supply Company |\n| Name: Dana Whitfield | Name: Priya Raghunathan |\n| Title: Director, Procurement Operations | Title: Vice President, Commercial |\n",
+        "title": "Execution"
+      }
+    ],
+    "effective_date": "2024-09-01",
+    "escalator_max_pct": null,
+    "included_skus": [
+      "PS-900",
+      "PS-901"
+    ],
+    "rate_card": {
+      "PS-200": 92.5,
+      "PS-300": 46.75,
+      "PS-400": 215.0,
+      "PS-500": 168.0
+    },
+    "tier_type": "all_units",
+    "vendor_id": "pinecrest_supply",
+    "volume_tiers": {
+      "PS-100": [
+        {
+          "min_qty": 1,
+          "unit_price": 38.4
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 34.25
+        },
+        {
+          "min_qty": 200,
+          "unit_price": 29.9
+        }
+      ]
+    }
+  }
+}

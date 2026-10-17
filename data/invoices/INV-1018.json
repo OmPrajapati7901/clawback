@@ -1,0 +1,29 @@
+{
+  "invoice_no": "INV-1018",
+  "vendor_name_raw": "Brightloom Facilities Services",
+  "invoice_date": "2026-09-09",
+  "line_items": [
+    {
+      "sku": "BF-100",
+      "description": "Janitorial service visit, standard site",
+      "qty": 15,
+      "unit_price": 185.0,
+      "amount": 2775.0
+    },
+    {
+      "sku": "BF-200",
+      "description": "HVAC preventive maintenance, rooftop unit",
+      "qty": 1,
+      "unit_price": 420.0,
+      "amount": 420.0
+    },
+    {
+      "sku": "BF-400",
+      "description": "Emergency maintenance callout, after hours",
+      "qty": 2,
+      "unit_price": 250.0,
+      "amount": 500.0
+    }
+  ],
+  "total": 3695.0
+}
